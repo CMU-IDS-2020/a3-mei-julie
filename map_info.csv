@@ -1,0 +1,562 @@
+state,year,party,votes
+Vermont,1976,republican,100387
+California,1976,republican,3882244
+Michigan,1976,republican,1893742
+Kansas,1976,republican,502752
+Georgia,1976,democrat,979409
+Alaska,1976,republican,71555
+Indiana,1976,republican,1183958
+Ohio,1976,democrat,2009959
+Wisconsin,1976,democrat,1040232
+Pennsylvania,1976,democrat,2328677
+Mississippi,1976,democrat,381329
+Missouri,1976,democrat,998387
+New Hampshire,1976,republican,185935
+Florida,1976,democrat,1636000
+New York,1976,democrat,3244165
+Rhode Island,1976,democrat,227636
+Washington,1976,republican,777732
+Illinois,1976,republican,2364269
+Wyoming,1976,republican,92717
+North Dakota,1976,republican,153684
+Utah,1976,republican,337908
+Connecticut,1976,republican,719261
+Alabama,1976,democrat,659170
+Montana,1976,republican,173703
+Oregon,1976,republican,492120
+South Dakota,1976,republican,151505
+Nebraska,1976,republican,359219
+Tennessee,1976,democrat,825879
+Maine,1976,republican,236320
+Louisiana,1976,democrat,661365
+Oklahoma,1976,republican,545708
+South Carolina,1976,democrat,450807
+Iowa,1976,republican,632864
+Hawaii,1976,democrat,147375
+Arizona,1976,republican,418642
+Arkansas,1976,democrat,498604
+Maryland,1976,democrat,759612
+Idaho,1976,republican,204151
+New Jersey,1976,republican,1509688
+Virginia,1976,republican,836554
+West Virginia,1976,democrat,435864
+Colorado,1976,republican,584278
+Kentucky,1976,democrat,615717
+Minnesota,1976,democrat,1070440
+Texas,1976,democrat,2082319
+Delaware,1976,democrat,122461
+New Mexico,1976,republican,211419
+Nevada,1976,republican,101273
+North Carolina,1976,democrat,927365
+Massachusetts,1976,democrat,1429475
+District of Columbia,1976,democrat,137818
+Texas,1980,republican,2510705
+Tennessee,1980,republican,787761
+South Carolina,1980,republican,439277
+Connecticut,1980,republican,677210
+Vermont,1980,republican,94628
+Nevada,1980,republican,155017
+West Virginia,1980,democrat,367462
+Delaware,1980,republican,111252
+North Carolina,1980,republican,915018
+Rhode Island,1980,democrat,198342
+Arkansas,1980,republican,403164
+Minnesota,1980,democrat,954173
+Montana,1980,republican,206814
+Hawaii,1980,democrat,135879
+Virginia,1980,republican,989609
+Alaska,1980,republican,86112
+District of Columbia,1980,democrat,130231
+Indiana,1980,republican,1255656
+Louisiana,1980,republican,792853
+New Hampshire,1980,republican,221705
+Michigan,1980,republican,1915225
+Missouri,1980,republican,1074181
+Wisconsin,1980,republican,1088845
+Mississippi,1980,republican,441089
+Colorado,1980,republican,652264
+Alabama,1980,republican,654192
+Florida,1980,republican,2046951
+Kentucky,1980,republican,635274
+Maine,1980,republican,238522
+Utah,1980,republican,439687
+North Dakota,1980,republican,193695
+Arizona,1980,republican,529688
+Ohio,1980,republican,2206545
+Nebraska,1980,republican,419214
+Wyoming,1980,republican,110700
+Maryland,1980,democrat,726161
+Illinois,1980,republican,2358049
+Iowa,1980,republican,676026
+New York,1980,democrat,2728372
+New Jersey,1980,republican,1546557
+Idaho,1980,republican,290699
+Pennsylvania,1980,republican,2261872
+Oklahoma,1980,republican,695570
+Massachusetts,1980,republican,1057631
+Oregon,1980,republican,571044
+Washington,1980,republican,865244
+Georgia,1980,democrat,890955
+Kansas,1980,republican,566812
+California,1980,republican,4522994
+New Mexico,1980,republican,250779
+South Dakota,1980,republican,198343
+New York,1984,republican,3376519
+Wisconsin,1984,republican,1198584
+Kansas,1984,republican,677296
+New Hampshire,1984,republican,267050
+Georgia,1984,republican,1068722
+Wyoming,1984,republican,133241
+Louisiana,1984,republican,1037299
+West Virginia,1984,republican,405483
+Mississippi,1984,republican,582377
+Michigan,1984,republican,2251571
+Oklahoma,1984,republican,861530
+Connecticut,1984,republican,890877
+Massachusetts,1984,republican,1310936
+Rhode Island,1984,republican,212080
+Nebraska,1984,republican,460054
+Utah,1984,republican,469105
+North Carolina,1984,republican,1346481
+Nevada,1984,republican,188770
+South Dakota,1984,republican,200267
+Delaware,1984,republican,152190
+California,1984,republican,5467009
+Virginia,1984,republican,1337078
+Washington,1984,republican,1051670
+North Dakota,1984,republican,200336
+Kentucky,1984,republican,821702
+Arizona,1984,republican,681416
+Florida,1984,republican,2730350
+Montana,1984,republican,232450
+District of Columbia,1984,democrat,180408
+Missouri,1984,republican,1274188
+Hawaii,1984,republican,185050
+South Carolina,1984,republican,615539
+Maryland,1984,republican,879918
+Ohio,1984,republican,2678559
+Pennsylvania,1984,republican,2584323
+Texas,1984,republican,3433428
+Maine,1984,republican,336500
+Arkansas,1984,republican,534774
+Oregon,1984,republican,685700
+Colorado,1984,republican,821817
+Vermont,1984,republican,135865
+New Mexico,1984,republican,307101
+Indiana,1984,republican,1377230
+New Jersey,1984,republican,1933630
+Idaho,1984,republican,297523
+Illinois,1984,republican,2707103
+Tennessee,1984,republican,990212
+Minnesota,1984,democrat,1036364
+Alaska,1984,republican,138377
+Iowa,1984,republican,703088
+Alabama,1984,republican,872849
+Arizona,1988,republican,702541
+Indiana,1988,republican,1297763
+District of Columbia,1988,democrat,159407
+New Mexico,1988,republican,270341
+Kentucky,1988,republican,734281
+Kansas,1988,republican,554049
+Oklahoma,1988,republican,678367
+Colorado,1988,republican,728177
+Washington,1988,democrat,933516
+Virginia,1988,republican,1309162
+Georgia,1988,republican,1081331
+Montana,1988,republican,190412
+Florida,1988,republican,2618885
+Rhode Island,1988,democrat,225123
+Wyoming,1988,republican,106867
+Arkansas,1988,republican,466578
+New Hampshire,1988,republican,281537
+Alabama,1988,republican,815576
+California,1988,republican,5054917
+Ohio,1988,republican,2416549
+Pennsylvania,1988,republican,2300087
+Missouri,1988,republican,1084953
+North Dakota,1988,republican,166559
+Michigan,1988,republican,1965486
+Wisconsin,1988,democrat,1126794
+Illinois,1988,republican,2310939
+South Dakota,1988,republican,165415
+Maryland,1988,republican,876167
+Nebraska,1988,republican,397956
+Idaho,1988,republican,253881
+New Jersey,1988,republican,1743192
+Tennessee,1988,republican,947233
+Maine,1988,republican,307131
+South Carolina,1988,republican,606443
+Texas,1988,republican,3036829
+Louisiana,1988,republican,883702
+Delaware,1988,republican,139639
+Vermont,1988,republican,124331
+Nevada,1988,republican,206040
+Alaska,1988,republican,119251
+Oregon,1988,democrat,616206
+Minnesota,1988,democrat,1109471
+North Carolina,1988,republican,1237258
+Connecticut,1988,republican,750241
+Massachusetts,1988,democrat,1401415
+West Virginia,1988,democrat,341016
+Hawaii,1988,democrat,192364
+Mississippi,1988,republican,557890
+Utah,1988,republican,428442
+New York,1988,democrat,3255487
+Iowa,1988,democrat,670557
+Connecticut,1992,democrat,682318
+Rhode Island,1992,democrat,213299
+Alabama,1992,republican,804283
+Nevada,1992,democrat,189148
+Kansas,1992,republican,449951
+Maryland,1992,democrat,988571
+California,1992,democrat,5121325
+Idaho,1992,republican,202645
+New Jersey,1992,democrat,1436206
+Indiana,1992,republican,989375
+New Hampshire,1992,democrat,209040
+Georgia,1992,democrat,1008966
+Wisconsin,1992,democrat,1041066
+North Dakota,1992,republican,136244
+Mississippi,1992,republican,487793
+Illinois,1992,democrat,2453350
+New York,1992,democrat,3346894
+Louisiana,1992,democrat,815971
+Alaska,1992,republican,102000
+Nebraska,1992,republican,343678
+Utah,1992,republican,322632
+North Carolina,1992,republican,1134661
+Kentucky,1992,democrat,665104
+South Dakota,1992,republican,136718
+Florida,1992,republican,2173310
+Minnesota,1992,democrat,1020997
+Oregon,1992,democrat,621314
+South Carolina,1992,republican,577507
+District of Columbia,1992,democrat,192619
+Colorado,1992,democrat,629681
+Texas,1992,republican,2496071
+Vermont,1992,democrat,133592
+Michigan,1992,democrat,1871182
+Maine,1992,democrat,263420
+Oklahoma,1992,republican,592929
+Hawaii,1992,democrat,179310
+Arizona,1992,republican,572086
+West Virginia,1992,democrat,331001
+Pennsylvania,1992,democrat,2239164
+Virginia,1992,republican,1150517
+Iowa,1992,democrat,586353
+Arkansas,1992,democrat,505823
+Washington,1992,democrat,993037
+Delaware,1992,democrat,126054
+Ohio,1992,democrat,1984942
+Montana,1992,democrat,154507
+Massachusetts,1992,democrat,1318639
+Missouri,1992,democrat,1053873
+New Mexico,1992,democrat,261617
+Tennessee,1992,democrat,933521
+Wyoming,1992,republican,79347
+Kentucky,1996,democrat,636614
+Nevada,1996,democrat,203974
+District of Columbia,1996,democrat,158220
+Massachusetts,1996,democrat,1571509
+Connecticut,1996,democrat,735740
+Michigan,1996,democrat,1989653
+New Jersey,1996,democrat,1652361
+Idaho,1996,republican,256595
+Louisiana,1996,democrat,927837
+Oklahoma,1996,republican,582315
+Illinois,1996,democrat,2341744
+Iowa,1996,democrat,620258
+New York,1996,democrat,3649630
+Wisconsin,1996,democrat,1071971
+Mississippi,1996,republican,439838
+Virginia,1996,republican,1138350
+Indiana,1996,republican,1006693
+New Hampshire,1996,democrat,246166
+Ohio,1996,democrat,2148222
+Oregon,1996,democrat,649641
+Vermont,1996,democrat,137894
+Missouri,1996,democrat,1025935
+Montana,1996,republican,179652
+Florida,1996,democrat,2546870
+North Carolina,1996,republican,1225938
+Rhode Island,1996,democrat,233050
+North Dakota,1996,republican,125050
+Kansas,1996,republican,583245
+Georgia,1996,republican,1080843
+Maryland,1996,democrat,966207
+West Virginia,1996,democrat,327812
+Arkansas,1996,democrat,475171
+Minnesota,1996,democrat,1120380
+New Mexico,1996,democrat,273495
+Texas,1996,republican,2736167
+South Carolina,1996,republican,573339
+Tennessee,1996,democrat,909146
+Maine,1996,democrat,312788
+South Dakota,1996,republican,150543
+Nebraska,1996,republican,363467
+Arizona,1996,democrat,653288
+Hawaii,1996,democrat,205012
+Washington,1996,democrat,1123323
+Wyoming,1996,republican,105388
+Alabama,1996,republican,769044
+Colorado,1996,republican,691848
+Delaware,1996,democrat,140355
+Alaska,1996,republican,122746
+California,1996,democrat,5119835
+Utah,1996,republican,361911
+Pennsylvania,1996,democrat,2215819
+Arizona,2000,republican,781652
+Minnesota,2000,democratic-farmer-labor,1168266
+Oregon,2000,democrat,720342
+District of Columbia,2000,democrat,171923
+Kentucky,2000,republican,872520
+Oklahoma,2000,republican,744337
+Rhode Island,2000,democrat,249508
+New Hampshire,2000,republican,273559
+Missouri,2000,republican,1189924
+Pennsylvania,2000,democrat,2485967
+Delaware,2000,democrat,180068
+Ohio,2000,republican,2350363
+California,2000,democrat,5861203
+Montana,2000,republican,240178
+Florida,2000,republican,2912790
+Virginia,2000,republican,1437490
+Colorado,2000,republican,883748
+Indiana,2000,republican,1245836
+Iowa,2000,democrat,638517
+New Jersey,2000,democrat,1788850
+Idaho,2000,republican,336937
+Wisconsin,2000,democrat,1242987
+Mississippi,2000,republican,572844
+Massachusetts,2000,democrat,1616487
+Connecticut,2000,democrat,816015
+Vermont,2000,democrat,149022
+Louisiana,2000,republican,927871
+Michigan,2000,democrat,2170418
+Arkansas,2000,republican,472940
+West Virginia,2000,republican,336475
+Texas,2000,republican,3799639
+New York,2000,democrat,3942215
+New Mexico,2000,democrat,286783
+Maryland,2000,democrat,1144008
+North Dakota,2000,republican,174852
+Utah,2000,republican,515096
+Georgia,2000,republican,1419720
+Illinois,2000,democrat,2589026
+Kansas,2000,republican,622332
+Alaska,2000,republican,167398
+Washington,2000,democrat,1247652
+Alabama,2000,republican,941173
+Nevada,2000,republican,301575
+Wyoming,2000,republican,147947
+South Dakota,2000,republican,190700
+Nebraska,2000,republican,433862
+South Carolina,2000,republican,786892
+Tennessee,2000,republican,1061949
+Maine,2000,democrat,319951
+Hawaii,2000,democrat,205286
+North Carolina,2000,republican,1631163
+Nebraska,2004,republican,512814
+Virginia,2004,republican,1716959
+North Dakota,2004,republican,196651
+Massachusetts,2004,democrat,1803800
+Alaska,2004,republican,190889
+Rhode Island,2004,democrat,259760
+Utah,2004,republican,663742
+Florida,2004,republican,3964522
+Nevada,2004,republican,418690
+North Carolina,2004,republican,1961166
+New Hampshire,2004,democrat,340511
+Georgia,2004,republican,1914254
+Kansas,2004,republican,736456
+Louisiana,2004,republican,1102169
+Montana,2004,republican,266063
+California,2004,democrat,6745485
+Michigan,2004,democrat,2479183
+Minnesota,2004,democratic-farmer-labor,1445014
+Oregon,2004,democrat,943163
+Vermont,2004,democrat,184067
+Pennsylvania,2004,democrat,2938095
+Maryland,2004,democrat,1334493
+Idaho,2004,republican,409235
+Iowa,2004,republican,751957
+Hawaii,2004,democrat,231708
+Alabama,2004,republican,1176394
+Connecticut,2004,democrat,857488
+Ohio,2004,republican,2859764
+Wyoming,2004,republican,167629
+New Jersey,2004,democrat,1911430
+Delaware,2004,democrat,200152
+Missouri,2004,republican,1455713
+District of Columbia,2004,democrat,202970
+Arkansas,2004,republican,572898
+Mississippi,2004,republican,672660
+Washington,2004,democrat,1510201
+Wisconsin,2004,democrat,1489504
+Indiana,2004,republican,1479438
+West Virginia,2004,republican,423778
+Illinois,2004,democrat,2891550
+Texas,2004,republican,4526917
+Oklahoma,2004,republican,959792
+Arizona,2004,republican,1104294
+New York,2004,democrat,4180755
+New Mexico,2004,republican,376930
+Colorado,2004,republican,1101255
+Tennessee,2004,republican,1384375
+Maine,2004,democrat,396842
+South Carolina,2004,republican,937974
+Kentucky,2004,republican,1069439
+South Dakota,2004,republican,232584
+Rhode Island,2008,democrat,296571
+Colorado,2008,democrat,1288576
+Illinois,2008,democrat,3419348
+New Jersey,2008,democrat,2215422
+Maryland,2008,democrat,1629467
+Michigan,2008,democrat,2872579
+Massachusetts,2008,democrat,1904097
+New York,2008,democrat,4645332
+Idaho,2008,republican,403012
+Indiana,2008,democrat,1374039
+Georgia,2008,republican,2048759
+Louisiana,2008,republican,1148275
+North Carolina,2008,democrat,2142651
+Vermont,2008,democrat,219262
+Alaska,2008,republican,193841
+Nevada,2008,democrat,533736
+Kansas,2008,republican,699655
+California,2008,democrat,8274473
+Oregon,2008,democrat,1037291
+Virginia,2008,democrat,1959532
+Montana,2008,republican,242763
+Tennessee,2008,republican,1479178
+Maine,2008,democrat,421923
+North Dakota,2008,republican,168601
+Connecticut,2008,democrat,997772
+South Carolina,2008,republican,1034896
+New Hampshire,2008,democrat,384826
+Texas,2008,republican,4479328
+Minnesota,2008,democrat,1573354
+Missouri,2008,republican,1445814
+South Dakota,2008,republican,203054
+Nebraska,2008,republican,452979
+Arizona,2008,republican,1230111
+Iowa,2008,democrat,828940
+Oklahoma,2008,republican,960165
+New Mexico,2008,democrat,472422
+Hawaii,2008,democrat,325871
+Kentucky,2008,republican,1048462
+Pennsylvania,2008,democrat,3276363
+Arkansas,2008,republican,638017
+West Virginia,2008,republican,397466
+District of Columbia,2008,democrat,245800
+Wisconsin,2008,democrat,1677211
+Delaware,2008,democrat,255459
+Washington,2008,democrat,1750848
+Ohio,2008,democrat,2940044
+Mississippi,2008,republican,724597
+Alabama,2008,republican,1266546
+Wyoming,2008,republican,164958
+Utah,2008,republican,596030
+Florida,2008,democrat,4282074
+Iowa,2012,democrat,822544
+Vermont,2012,democrat,199239
+Washington,2012,democrat,1755396
+Delaware,2012,democrat,242584
+North Dakota,2012,republican,188320
+Utah,2012,republican,740600
+New Jersey,2012,democrat,2122786
+Idaho,2012,republican,420911
+Georgia,2012,republican,2078688
+Alabama,2012,republican,1255925
+New York,2012,democrat,4324228
+Illinois,2012,democrat,3019512
+Wyoming,2012,republican,170962
+New Hampshire,2012,democrat,369561
+Kansas,2012,republican,692634
+Rhode Island,2012,democrat,279677
+South Dakota,2012,republican,210610
+Nebraska,2012,republican,475064
+Arkansas,2012,republican,647744
+Maryland,2012,democrat,1677844
+West Virginia,2012,republican,417655
+Oklahoma,2012,republican,891325
+South Carolina,2012,republican,1071645
+Tennessee,2012,republican,1462330
+Oregon,2012,democrat,970488
+Maine,2012,democrat,401306
+District of Columbia,2012,democrat,267070
+Indiana,2012,republican,1420543
+Colorado,2012,democrat,1323101
+Texas,2012,republican,4569843
+Hawaii,2012,democrat,306658
+Virginia,2012,democrat,1971820
+Arizona,2012,republican,1233654
+Florida,2012,democrat,4237756
+Montana,2012,republican,267928
+California,2012,democrat,7854285
+Alaska,2012,republican,164676
+Ohio,2012,democrat,2827621
+Pennsylvania,2012,democrat,2990274
+New Mexico,2012,democrat,415335
+Missouri,2012,republican,1482440
+Michigan,2012,democrat,2564569
+Louisiana,2012,republican,1152262
+Nevada,2012,democrat,531373
+North Carolina,2012,republican,2270395
+Connecticut,2012,democrat,905083
+Massachusetts,2012,democrat,1921290
+Mississippi,2012,republican,710746
+Wisconsin,2012,democrat,1620985
+Kentucky,2012,republican,1087190
+Minnesota,2012,democratic-farmer-labor,1546167
+Kentucky,2016,republican,1202971
+West Virginia,2016,republican,489371
+Arkansas,2016,republican,684872
+Alabama,2016,republican,1318255
+New Mexico,2016,democrat,385234
+Texas,2016,republican,4685047
+Washington,2016,democrat,1742718
+North Dakota,2016,republican,216794
+Utah,2016,republican,515211
+Kansas,2016,republican,671018
+Georgia,2016,republican,2089104
+Maryland,2016,democrat,1677928
+Virginia,2016,democrat,1981473
+Hawaii,2016,democrat,266891
+Indiana,2016,republican,1557286
+Colorado,2016,democrat,1338870
+Ohio,2016,republican,2841005
+Arizona,2016,republican,1252401
+Pennsylvania,2016,republican,2970733
+Missouri,2016,republican,1594511
+Florida,2016,republican,4617886
+Montana,2016,republican,279240
+California,2016,democrat,8753788
+North Carolina,2016,republican,2362631
+South Dakota,2016,republican,227721
+Wyoming,2016,republican,174419
+Nevada,2016,democrat,539260
+Massachusetts,2016,democrat,1995196
+South Carolina,2016,republican,1155389
+Tennessee,2016,republican,1522925
+Maine,2016,democrat,357735
+Connecticut,2016,democrat,897572
+Michigan,2016,republican,2279543
+Louisiana,2016,republican,1178638
+Iowa,2016,republican,800983
+Mississippi,2016,republican,700714
+Wisconsin,2016,republican,1405284
+Delaware,2016,democrat,235603
+Minnesota,2016,democrat,1367705
+Vermont,2016,democrat,178573
+Oregon,2016,democrat,1002106
+Illinois,2016,democrat,3090729
+New York,2016,democrat,4379789
+Idaho,2016,republican,409055
+Alaska,2016,republican,163387
+New Jersey,2016,democrat,2148278
+Rhode Island,2016,democrat,252525
+New Hampshire,2016,democrat,348526
+Oklahoma,2016,republican,949136
+District of Columbia,2016,democrat,282830
+Nebraska,2016,republican,495961
