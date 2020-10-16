@@ -1,0 +1,52 @@
+state,id,year,party,votes
+Alabama,1,2000,republican,941173
+Alaska,2,2000,republican,167398
+Arizona,4,2000,republican,781652
+Arkansas,5,2000,republican,472940
+California,6,2000,democrat,5861203
+Colorado,8,2000,republican,883748
+Connecticut,9,2000,democrat,816015
+Delaware,10,2000,democrat,180068
+District of Columbia,11,2000,democrat,171923
+Florida,12,2000,republican,2912790
+Georgia,13,2000,republican,1419720
+Hawaii,15,2000,democrat,205286
+Idaho,16,2000,republican,336937
+Illinois,17,2000,democrat,2589026
+Indiana,18,2000,republican,1245836
+Iowa,19,2000,democrat,638517
+Kansas,20,2000,republican,622332
+Kentucky,21,2000,republican,872520
+Louisiana,22,2000,republican,927871
+Maine,23,2000,democrat,319951
+Maryland,24,2000,democrat,1144008
+Massachusetts,25,2000,democrat,1616487
+Michigan,26,2000,democrat,2170418
+Minnesota,27,2000,democratic-farmer-labor,1168266
+Mississippi,28,2000,republican,572844
+Missouri,29,2000,republican,1189924
+Montana,30,2000,republican,240178
+Nebraska,31,2000,republican,433862
+Nevada,32,2000,republican,301575
+New Hampshire,33,2000,republican,273559
+New Jersey,34,2000,democrat,1788850
+New Mexico,35,2000,democrat,286783
+New York,36,2000,democrat,3942215
+North Carolina,37,2000,republican,1631163
+North Dakota,38,2000,republican,174852
+Ohio,39,2000,republican,2350363
+Oklahoma,40,2000,republican,744337
+Oregon,41,2000,democrat,720342
+Pennsylvania,42,2000,democrat,2485967
+Rhode Island,44,2000,democrat,249508
+South Carolina,45,2000,republican,786892
+South Dakota,46,2000,republican,190700
+Tennessee,47,2000,republican,1061949
+Texas,48,2000,republican,3799639
+Utah,49,2000,republican,515096
+Vermont,50,2000,democrat,149022
+Virginia,51,2000,republican,1437490
+Washington,53,2000,democrat,1247652
+West Virginia,54,2000,republican,336475
+Wisconsin,55,2000,democrat,1242987
+Wyoming,56,2000,republican,147947
