@@ -22,32 +22,35 @@ states=alt.topo_feature(data.us_10m.url, 'states')
 
 con=create_db(create_db_comm)
 
-command ="""select m.state,m.year,m.party,t.votes
+command ="""create table mapp as (select m.state,m.year,m.party,t.votes
         from (
             select state,year,max(candidatevotes) as votes
             from votes
             group by state,year
             ) t join votes m on m.state=t.state and m.year=t.year and t.votes=m.candidatevotes
-            order by m.year"""
+            order by m.state)"""
 df=query(command)
 st.write(df)
-con.execute("COPY votes TO 'map_infos.csv'")
+# con.execute("COPY mapp TO 'map_info.csv'")
+create_db_comm="create table all_years as select * from read_csv_auto('map_info.csv');"
+con=create_db(create_db_comm)
 
-# COPY make_map_table TO 'map_info.csv'
-# base = alt.Chart(states,title='Votes').mark_geoshape().encode(
-#     ).properties(
-#         projection={'type':'albersUsa'},
-#         width=500,
-#         height=300
-#     )
-#     # Add Choropleth Layer
-#     choro = alt.Chart(states).mark_geoshape(
-#         fill='lightgray',
-#         stroke='black'
-#     ).encode(
-#         alt.Color('df.votes', 
-#                   type='quantitative', 
-#                   scale=alt.Scale(scheme='bluegreen'),
-#                   title = "Votes")
-#     )
-#     st.write(base+choro)
+comm="""create table year_2012 as select * from all_years
+        where year=2012"""
+df=query(comm)
+st.write(df)
+# con.execute("COPY year_2012 TO 'year_2012.csv'")
+states = alt.topo_feature(data.us_10m.url, 'states')
+source = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/year_2012.csv"
+us=alt.Chart(states).mark_geoshape().encode(
+    color='votes:Q'
+).transform_lookup(
+    lookup='id',
+    from_=alt.LookupData(source, 'id', ['votes'])
+).project(
+    type='albersUsa'
+).properties(
+    width=500,
+    height=300
+)
+st.write(us)
