@@ -1,0 +1,52 @@
+state,year,party,p_votes,id
+Alabama,1996,republican,0.50121844,1
+Alaska,1996,republican,0.5080126,2
+Arizona,1996,democrat,0.46517065,4
+Arkansas,1996,democrat,0.5373645,5
+California,1996,democrat,0.51098865,6
+Colorado,1996,republican,0.45796457,8
+Connecticut,1996,democrat,0.52831584,9
+Delaware,1996,democrat,0.5182785,10
+District of Columbia,1996,democrat,0.8519001,11
+Florida,1996,democrat,0.48025572,12
+Georgia,1996,republican,0.4701568,13
+Hawaii,1996,democrat,0.569288,15
+Idaho,1996,republican,0.5218411,16
+Illinois,1996,democrat,0.54315275,17
+Indiana,1996,republican,0.4714238,18
+Iowa,1996,democrat,0.50260967,19
+Kansas,1996,republican,0.542907,20
+Kentucky,1996,democrat,0.4584218,21
+Louisiana,1996,democrat,0.52009994,22
+Maine,1996,democrat,0.5162396,23
+Maryland,1996,democrat,0.54254776,24
+Massachusetts,1996,democrat,0.614721,25
+Michigan,1996,democrat,0.5169482,26
+Minnesota,1996,democrat,0.51100755,27
+Mississippi,1996,republican,0.49206752,28
+Missouri,1996,democrat,0.47539577,29
+Montana,1996,republican,0.4413154,30
+Nebraska,1996,republican,0.53655,31
+Nevada,1996,democrat,0.43933496,32
+New Hampshire,1996,democrat,0.49570578,33
+New Jersey,1996,democrat,0.53720295,34
+New Mexico,1996,democrat,0.49183202,35
+New York,1996,democrat,0.5667894,36
+North Carolina,1996,republican,0.48729414,37
+North Dakota,1996,republican,0.46938753,38
+Ohio,1996,democrat,0.47375748,39
+Oklahoma,1996,republican,0.48256296,40
+Oregon,1996,democrat,0.4715197,41
+Pennsylvania,1996,democrat,0.49226126,42
+Rhode Island,1996,democrat,0.5971859,44
+South Carolina,1996,republican,0.49847677,45
+South Dakota,1996,republican,0.46488854,46
+Tennessee,1996,democrat,0.4799871,47
+Texas,1996,republican,0.48758742,48
+Utah,1996,republican,0.5437128,49
+Vermont,1996,democrat,0.53354436,50
+Virginia,1996,republican,0.47104618,51
+Washington,1996,democrat,0.4984047,53
+West Virginia,1996,democrat,0.51505595,54
+Wisconsin,1996,democrat,0.48810953,55
+Wyoming,1996,republican,0.4981212,56

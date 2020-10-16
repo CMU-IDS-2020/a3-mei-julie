@@ -1,0 +1,52 @@
+state,year,party,p_votes,id
+Alabama,1992,republican,0.47645405,1
+Alaska,1992,republican,0.39457497,2
+Arizona,1992,republican,0.3847314,4
+Arkansas,1992,democrat,0.5320795,5
+California,1992,democrat,0.46006587,6
+Colorado,1992,democrat,0.40128028,8
+Connecticut,1992,democrat,0.42218572,9
+Delaware,1992,democrat,0.4352393,10
+District of Columbia,1992,democrat,0.846409,11
+Florida,1992,republican,0.40902498,12
+Georgia,1992,democrat,0.43468684,13
+Hawaii,1992,democrat,0.4809276,15
+Idaho,1992,republican,0.4203259,16
+Illinois,1992,democrat,0.48579678,17
+Indiana,1992,republican,0.4290678,18
+Iowa,1992,democrat,0.43285838,19
+Kansas,1992,republican,0.38881525,20
+Kentucky,1992,democrat,0.44551143,21
+Louisiana,1992,democrat,0.4558454,22
+Maine,1992,democrat,0.38766798,23
+Maryland,1992,democrat,0.49812606,24
+Massachusetts,1992,democrat,0.4754141,25
+Michigan,1992,democrat,0.43773687,26
+Minnesota,1992,democrat,0.43484652,27
+Mississippi,1992,republican,0.49683896,28
+Missouri,1992,democrat,0.44071686,29
+Montana,1992,democrat,0.37631124,30
+Nebraska,1992,republican,0.46597502,31
+Nevada,1992,democrat,0.3735755,32
+New Hampshire,1992,democrat,0.38911796,33
+New Jersey,1992,democrat,0.4295396,34
+New Mexico,1992,democrat,0.45898846,35
+New York,1992,democrat,0.47276306,36
+North Carolina,1992,republican,0.4344281,37
+North Dakota,1992,republican,0.4421597,38
+Ohio,1992,democrat,0.4018128,39
+Oklahoma,1992,republican,0.4264575,40
+Oregon,1992,democrat,0.42478856,41
+Pennsylvania,1992,democrat,0.45146164,42
+Rhode Island,1992,democrat,0.47047964,44
+South Carolina,1992,republican,0.46993357,45
+South Dakota,1992,republican,0.40659145,46
+Tennessee,1992,democrat,0.47084793,47
+Texas,1992,republican,0.40560022,48
+Utah,1992,republican,0.43364632,49
+Vermont,1992,democrat,0.4611375,50
+Virginia,1992,republican,0.44957367,51
+Washington,1992,democrat,0.4341022,53
+West Virginia,1992,democrat,0.4841482,54
+Wisconsin,1992,democrat,0.41131556,55
+Wyoming,1992,republican,0.39696524,56
