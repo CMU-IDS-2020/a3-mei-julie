@@ -1,0 +1,52 @@
+state,id,year,party,votes
+Alabama,1,2016,republican,1318255
+Alaska,2,2016,republican,163387
+Arizona,4,2016,republican,1252401
+Arkansas,5,2016,republican,684872
+California,6,2016,democrat,8753788
+Colorado,8,2016,democrat,1338870
+Connecticut,9,2016,democrat,897572
+Delaware,10,2016,democrat,235603
+District of Columbia,11,2016,democrat,282830
+Florida,12,2016,republican,4617886
+Georgia,13,2016,republican,2089104
+Hawaii,15,2016,democrat,266891
+Idaho,16,2016,republican,409055
+Illinois,17,2016,democrat,3090729
+Indiana,18,2016,republican,1557286
+Iowa,19,2016,republican,800983
+Kansas,20,2016,republican,671018
+Kentucky,21,2016,republican,1202971
+Louisiana,22,2016,republican,1178638
+Maine,23,2016,democrat,357735
+Maryland,24,2016,democrat,1677928
+Massachusetts,25,2016,democrat,1995196
+Michigan,26,2016,republican,2279543
+Minnesota,27,2016,democrat,1367705
+Mississippi,28,2016,republican,700714
+Missouri,29,2016,republican,1594511
+Montana,30,2016,republican,279240
+Nebraska,31,2016,republican,495961
+Nevada,32,2016,democrat,539260
+New Hampshire,33,2016,democrat,348526
+New Jersey,34,2016,democrat,2148278
+New Mexico,35,2016,democrat,385234
+New York,36,2016,democrat,4379789
+North Carolina,37,2016,republican,2362631
+North Dakota,38,2016,republican,216794
+Ohio,39,2016,republican,2841005
+Oklahoma,40,2016,republican,949136
+Oregon,41,2016,democrat,1002106
+Pennsylvania,42,2016,republican,2970733
+Rhode Island,44,2016,democrat,252525
+South Carolina,45,2016,republican,1155389
+South Dakota,46,2016,republican,227721
+Tennessee,47,2016,republican,1522925
+Texas,48,2016,republican,4685047
+Utah,49,2016,republican,515211
+Vermont,50,2016,democrat,178573
+Virginia,51,2016,democrat,1981473
+Washington,53,2016,democrat,1742718
+West Virginia,54,2016,republican,489371
+Wisconsin,55,2016,republican,1405284
+Wyoming,56,2016,republican,174419
