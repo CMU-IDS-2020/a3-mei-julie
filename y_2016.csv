@@ -1,0 +1,52 @@
+state,year,party,p_votes,id
+Alabama,2016,republican,0.62083095,1
+Alaska,2016,republican,0.5128151,2
+Arizona,2016,republican,0.48671615,4
+Arkansas,2016,republican,0.605741,5
+California,2016,democrat,0.617264,6
+Colorado,2016,democrat,0.4815698,8
+Connecticut,2016,democrat,0.545663,9
+Delaware,2016,democrat,0.5335334,10
+District of Columbia,2016,democrat,0.90483886,11
+Florida,2016,republican,0.4902194,12
+Georgia,2016,republican,0.50771326,13
+Hawaii,2016,democrat,0.60980797,15
+Idaho,2016,republican,0.59261435,16
+Illinois,2016,democrat,0.55825365,17
+Indiana,2016,republican,0.5694003,18
+Iowa,2016,republican,0.51162064,19
+Kansas,2016,republican,0.56654584,20
+Kentucky,2016,republican,0.6251964,21
+Louisiana,2016,republican,0.58088684,22
+Maine,2016,democrat,0.46345213,23
+Maryland,2016,democrat,0.6032574,24
+Massachusetts,2016,democrat,0.59050065,25
+Michigan,2016,republican,0.47497565,26
+Minnesota,2016,democrat,0.46445033,27
+Mississippi,2016,republican,0.5794104,28
+Missouri,2016,republican,0.56772345,29
+Montana,2016,republican,0.5646619,30
+Nebraska,2016,republican,0.5874735,31
+Nevada,2016,democrat,0.47917825,32
+New Hampshire,2016,democrat,0.4682626,33
+New Jersey,2016,democrat,0.55453086,34
+New Mexico,2016,democrat,0.48255646,35
+New York,2016,democrat,0.56136143,36
+North Carolina,2016,republican,0.49828094,37
+North Dakota,2016,republican,0.6295563,38
+Ohio,2016,republican,0.5168765,39
+Oklahoma,2016,republican,0.65322864,40
+Oregon,2016,democrat,0.50071853,41
+Pennsylvania,2016,republican,0.48577887,42
+Rhode Island,2016,democrat,0.5440661,44
+South Carolina,2016,republican,0.54939336,45
+South Dakota,2016,republican,0.6153075,46
+Tennessee,2016,republican,0.60722035,47
+Texas,2016,republican,0.52234685,48
+Utah,2016,republican,0.45540816,49
+Vermont,2016,democrat,0.55722743,50
+Virginia,2016,democrat,0.49751353,51
+Washington,2016,democrat,0.5253868,53
+West Virginia,2016,republican,0.68630576,54
+Wisconsin,2016,republican,0.47218186,55
+Wyoming,2016,republican,0.6739841,56
