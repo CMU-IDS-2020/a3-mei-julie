@@ -1,0 +1,52 @@
+state,year,party,p_votes,id
+Alabama,2012,republican,0.6054582,1
+Alaska,2012,republican,0.5480158,2
+Arizona,2012,republican,0.53654534,4
+Arkansas,2012,republican,0.6056694,5
+California,2012,democrat,0.6023896,6
+Colorado,2012,democrat,0.51492226,8
+Connecticut,2012,democrat,0.5808501,9
+Delaware,2012,democrat,0.58610743,10
+District of Columbia,2012,democrat,0.9091311,11
+Florida,2012,democrat,0.5000787,12
+Georgia,2012,republican,0.5332924,13
+Hawaii,2012,democrat,0.7014793,15
+Idaho,2012,republican,0.6452978,16
+Illinois,2012,democrat,0.5760214,17
+Indiana,2012,republican,0.5412553,18
+Iowa,2012,democrat,0.5198802,19
+Kansas,2012,republican,0.5971132,20
+Kentucky,2012,republican,0.6049314,21
+Louisiana,2012,republican,0.57784575,22
+Maine,2012,democrat,0.55371034,23
+Maryland,2012,democrat,0.6197419,24
+Massachusetts,2012,democrat,0.60338306,25
+Michigan,2012,democrat,0.5420821,26
+Minnesota,2012,democratic-farmer-labor,0.52652305,27
+Mississippi,2012,republican,0.5528585,28
+Missouri,2012,republican,0.5376374,29
+Montana,2012,republican,0.5535154,30
+Nebraska,2012,republican,0.59803194,31
+Nevada,2012,democrat,0.5235625,32
+New Hampshire,2012,democrat,0.51979685,33
+New Jersey,2012,democrat,0.58342355,34
+New Mexico,2012,democrat,0.5299276,35
+New York,2012,democrat,0.60760987,36
+North Carolina,2012,republican,0.5039306,37
+North Dakota,2012,republican,0.5831568,38
+Ohio,2012,democrat,0.5066675,39
+Oklahoma,2012,republican,0.6677232,40
+Oregon,2012,democrat,0.54239327,41
+Pennsylvania,2012,democrat,0.5207686,42
+Rhode Island,2012,democrat,0.6270096,44
+South Carolina,2012,republican,0.5456113,45
+South Dakota,2012,republican,0.5788931,46
+Tennessee,2012,republican,0.5947871,47
+Texas,2012,republican,0.57166976,48
+Utah,2012,republican,0.72790533,49
+Vermont,2012,democrat,0.6657055,50
+Virginia,2012,democrat,0.51156455,51
+Washington,2012,democrat,0.561634,53
+West Virginia,2012,republican,0.6229584,54
+Wisconsin,2012,democrat,0.52776164,55
+Wyoming,2012,republican,0.68193585,56
