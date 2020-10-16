@@ -14,6 +14,19 @@ def query(query):
     df=con.fetchdf()
     return df
 
+def make_map(title,w,h,source):
+    return alt.Chart(states,title=title).mark_geoshape().encode(
+        color='p_votes:Q'
+    ).transform_lookup(
+        lookup='id',
+        from_=alt.LookupData(source, 'id', ['p_votes'])
+    ).project(
+        type='albersUsa'
+    ).properties(
+        width=w,
+        height=h
+    )
+
 create_db_comm="create table votes as select * from read_csv_auto('1976-2016-president.csv');"
 states=alt.topo_feature(data.us_10m.url, 'states')
 
@@ -21,36 +34,42 @@ states=alt.topo_feature(data.us_10m.url, 'states')
 # st.write(source)
 
 con=create_db(create_db_comm)
-
-command ="""create table mapp as (select m.state,m.year,m.party,t.votes
+comm="""create table p_votes as select state,year,party,cast(candidatevotes as float)/cast(totalvotes as float) as perc_votes from votes"""
+df=query(comm)
+command ="""create table extra as (select m.state,m.year,m.party,t.votes
         from (
-            select state,year,max(candidatevotes) as votes
-            from votes
+            select state,year,max(perc_votes) as votes
+            from p_votes
             group by state,year
-            ) t join votes m on m.state=t.state and m.year=t.year and t.votes=m.candidatevotes
+            ) t join p_votes m on m.state=t.state and m.year=t.year and t.votes=m.perc_votes
             order by m.state)"""
 df=query(command)
-st.write(df)
-# con.execute("COPY mapp TO 'map_info.csv'")
-create_db_comm="create table all_years as select * from read_csv_auto('map_info.csv');"
+# con.execute("COPY extra TO 'xs.csv'")
+create_db_comm="create table all_years as select * from read_csv_auto('xs.csv');"
 con=create_db(create_db_comm)
 
-comm="""create table year_2012 as select * from all_years
-        where year=2012"""
+comm="""create table year_2008 as select * from all_years
+        where year=2008"""
 df=query(comm)
-st.write(df)
-# con.execute("COPY year_2012 TO 'year_2012.csv'")
+elec_year=st.slider("Year",min_value=1976,max_value=2016,step=4)
+# con.execute("COPY year_2008 TO 'y_2008.csv'")
 states = alt.topo_feature(data.us_10m.url, 'states')
-source = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/year_2012.csv"
-us=alt.Chart(states).mark_geoshape().encode(
-    color='votes:Q'
-).transform_lookup(
-    lookup='id',
-    from_=alt.LookupData(source, 'id', ['votes'])
-).project(
-    type='albersUsa'
-).properties(
-    width=500,
-    height=300
-)
+source00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2000.csv"
+source08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2008.csv"
+source12 = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2012.csv"
+source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2016.csv"
+# source="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/map_info.csv"
+
+us=None
+w=800
+h=500
+if elec_year==2000:
+    us=make_map("title",w,h,source00)
+elif elec_year==2008:
+    us=make_map("title",w,h,source08)
+elif elec_year==2012:
+    us=make_map("title",w,h,source12)
+elif elec_year==2016:
+    us=make_map("title",w,h,source16)
 st.write(us)
+
