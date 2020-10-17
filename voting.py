@@ -15,11 +15,12 @@ def query(query):
     return df
 
 def make_map(w,h,source):
-    return alt.Chart(states).mark_geoshape().encode(
-        color='p_votes:Q'
+    return alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
+        color=alt.Color("p_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(domain=(0.5,0.8))),
+        tooltip=[alt.Tooltip('state:N',title="State"),alt.Tooltip('party:N',title="Party"),alt.Tooltip('p_votes:O',title="% Votes")]
     ).transform_lookup(
         lookup='id',
-        from_=alt.LookupData(source, 'id', ['p_votes'])
+        from_=alt.LookupData(source, 'id', ['p_votes','party','state'])
     ).project(
         type='albersUsa'
     ).properties(
@@ -45,21 +46,25 @@ command ="""create table extra as (select m.state,m.year,m.party,t.votes
             order by m.state)"""
 df=query(command)
 # con.execute("COPY extra TO 'xs.csv'")
-create_db_comm="create table all_years as select * from read_csv_auto('xs.csv');"
+create_db_comm="create table all_years as select * from read_csv_auto('byparty.csv');"
 con=create_db(create_db_comm)
-
-comm="""create table year_1992 as select * from all_years
-        where year=1992"""
+comm="create table yyy as select * from all_years where year=2000"
 df=query(comm)
-elec_year=st.slider("Year",min_value=2000,max_value=2016,step=4)
-# con.execute("COPY year_1992 TO 'y_1992.csv'")
+# st.write(df)
+# con.execute("COPY yyy TO '2000_rd.csv'")
 states = alt.topo_feature(data.us_10m.url, 'states')
-
 source00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2000.csv"
 source04="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2004.csv"
 source08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2008.csv"
 source12 = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2012.csv"
 source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2016.csv"
+
+
+elec_year=st.sidebar.slider("Year",min_value=2000,max_value=2016,step=4)
+selected = st.sidebar.selectbox(
+    "Which category do you want to look at?",
+    ("Age", "Income", "Race")
+)
 
 us=None
 w=800
@@ -76,3 +81,21 @@ elif elec_year==2016:
     us=make_map(w,h,source16)
 st.write(us)
 
+# # Compute x^2 + y^2 across a 2D grid
+# x, y = np.meshgrid(range(-5, 5), range(-5, 5))
+# z = x ** 2 + y ** 2
+
+# # Convert this grid to columnar data expected by Altair
+# source = pd.DataFrame({'x': x.ravel(),
+#                      'y': y.ravel(),
+#                      'z': z.ravel()})
+
+# alt.Chart(source).mark_rect().encode(
+#     x='x:O',
+#     y='y:O',
+#     color='z:Q'
+# )
+# if selected=='income':
+#     h_map=alt.Chart(source16).mark_rect().encode(
+#         x=''
+#     )
