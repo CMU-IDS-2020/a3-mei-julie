@@ -29,12 +29,18 @@ def make_map(w,h,source):
     )
 
 create_db_comm="create table votes as select * from read_csv_auto('1976-2016-president.csv');"
+con=create_db(create_db_comm)
+
+qq="""select year, sum(totalvotes) as totalvotes
+        from votes
+        group by year
+        order by year"""
+df_voteyear=query(qq)
+# con.execute("COPY vote_year TO 'vote_year.csv'")
 states=alt.topo_feature(data.us_10m.url, 'states')
 
 # source = data.population_engineers_hurricanes.url
 # st.write(source)
-
-con=create_db(create_db_comm)
 comm="""create table p_votes as select state,year,party,cast(candidatevotes as float)/cast(totalvotes as float) as perc_votes from votes"""
 df=query(comm)
 command ="""create table extra as (select m.state,m.year,m.party,t.votes
@@ -44,12 +50,11 @@ command ="""create table extra as (select m.state,m.year,m.party,t.votes
             group by state,year
             ) t join p_votes m on m.state=t.state and m.year=t.year and t.votes=m.perc_votes
             order by m.state)"""
-df=query(command)
-# con.execute("COPY extra TO 'xs.csv'")
-create_db_comm="create table all_years as select * from read_csv_auto('byparty.csv');"
-con=create_db(create_db_comm)
-comm="create table yyy as select * from all_years where year=2000"
-df=query(comm)
+# df=query(command)
+# create_db_comm="create table all_years as select * from read_csv_auto('byparty.csv');"
+# con=create_db(create_db_comm)
+# comm="create table yyy as select * from all_years where year=2000"
+# df=query(comm)
 # st.write(df)
 # con.execute("COPY yyy TO '2000_rd.csv'")
 states = alt.topo_feature(data.us_10m.url, 'states')
@@ -59,13 +64,34 @@ source08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2
 source12 = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2012.csv"
 source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2016.csv"
 
+st.text("Who voted? A Breakdown of the Voting Population")
+year_type = st.selectbox(
+    "Select a year:",
+    (None,2000,2004,2008,2012,2016)
+)
 
-elec_year=st.sidebar.slider("Year",min_value=2000,max_value=2016,step=4)
-selected = st.sidebar.selectbox(
-    "Which category do you want to look at?",
+# selector = alt.selection_single(fields=['totalvotes'])
+votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
+    x=alt.X('year:O',axis=alt.Axis(title="Year")),
+    y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
+    color=alt.condition(alt.datum.year==year_type,alt.value('chartreuse'),alt.value('lightblue'))
+).properties(width=600)
+st.write(votebars)
+
+dem_type = st.selectbox(
+    "Select a category:",
     ("Age", "Income", "Race")
 )
 
+if dem_type=='Age':
+    st.write('age')
+elif dem_type=='Income':
+    st.write('income')
+elif dem_type=='Race':
+    st.write('race')
+
+st.text("A Breakdown of Political Parties Across the States")
+elec_year=st.slider("Year",min_value=2000,max_value=2016,step=4)
 us=None
 w=800
 h=500
