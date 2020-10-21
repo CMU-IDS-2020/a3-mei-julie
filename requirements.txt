@@ -2,3 +2,6 @@ streamlit
 pandas
 altair
 vega_datasets
+duckdb
+requests
+io
