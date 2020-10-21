@@ -31,7 +31,7 @@ def make_map(w,h,source):
     )
 def make_chart(source):
     return alt.Chart(source).transform_fold(
-        ['Total_Voted','Total_Not_Voted'],
+        ['Voted','Not Voted'],
         as_=['column','value']
     ).mark_bar(size=30).encode(
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
@@ -93,49 +93,13 @@ source5 = c.loc[c["Year"] == 2016]
 
 year2000=make_chart(source1)
 
-year2004=alt.Chart(source2).transform_fold(
-    ['Total_Voted','Total_Not_Voted'],
-    as_=['column','value']
-).mark_bar(size=30).encode(
-    x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
-    y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.Color('column:N',
-            scale=alt.Scale(
-                range=['#ffcc5c','#96ceb4']))
-).properties(width=600)
+year2004=make_chart(source2)
 
-year2008=alt.Chart(source3).transform_fold(
-    ['Total_Voted','Total_Not_Voted'],
-    as_=['column','value']
-).mark_bar(size=30).encode(
-    x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
-    y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.Color('column:N',
-            scale=alt.Scale(
-                range=['#ffcc5c','#96ceb4']))
-).properties(width=600)
+year2008=make_chart(source3)
 
-year2012=alt.Chart(source4).transform_fold(
-    ['Total_Voted','Total_Not_Voted'],
-    as_=['column','value']
-).mark_bar(size=30).encode(
-    x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
-    y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.Color('column:N',
-            scale=alt.Scale(
-                range=['#ffcc5c','#96ceb4']))
-).properties(width=600)
+year2012=make_chart(source4)
 
-year2016=alt.Chart(source5).transform_fold(
-    ['Total_Voted','Total_Not_Voted'],
-    as_=['column','value']
-).mark_bar(size=30).encode(
-    x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
-    y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.Color('column:N',
-            scale=alt.Scale(
-                range=['#ffcc5c','#96ceb4']))
-).properties(width=600)
+year2016=make_chart(source5)
 
 # st.write(year2000)
 # st.write(year2004)
@@ -163,7 +127,6 @@ elif elec_year==2012:
 elif elec_year==2016:
     comm="""select * from income_t where year=2016"""
     df_income=query(comm)
-st.write(df_income)
 
 # selector = alt.selection_single(fields=['totalvotes'])
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
