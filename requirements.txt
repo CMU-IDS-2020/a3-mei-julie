@@ -1,7 +1,7 @@
 streamlit
 pandas
 altair
-vega_datasets
+data
 duckdb
 requests
 io
