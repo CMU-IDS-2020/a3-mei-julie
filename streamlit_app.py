@@ -15,7 +15,7 @@ def make_map(w,h,source,color):
         ).properties(width=w,height=h)
 
     party=alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
-        color=alt.Color("percent_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(scheme=color,domain=(0.45,0.8))),
+        color=alt.Color("percent_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(scheme=color,domain=(0.45,0.75))),
         tooltip=[alt.Tooltip('state:N',title="State"),alt.Tooltip('percent_votes:O',title="% Votes")]
     ).transform_lookup(
         lookup='id',
