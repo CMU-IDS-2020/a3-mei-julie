@@ -43,9 +43,7 @@ st.title("Who Made 👴🏻,👴🏻,👴🏽,👴🏻 President?")
 
 st.write("This visualization explores demographics of voters for the past elections starting from 2000. How can you make a difference for your demographic for the upcoming 2020 election?")
 
-st.subheader("Who voted?")
-st.subheader("A Breakdown of the Voting Population")
-
+st.subheader("Who voted?: A Breakdown of the Voting Population")
 
 ####AGE#####
 url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/AgeData.csv"
@@ -199,8 +197,8 @@ source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2
 
 sourcer00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_r.csv"
 sourced00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_d.csv"
-st.subheader("Left or Right?")
-st.subheader("A Breakdown of Political Parties Across the States")
+st.subheader("Left or Right?: A Breakdown of Political Parties Across the States")
+
 usr=None
 usd=None
 w=540
