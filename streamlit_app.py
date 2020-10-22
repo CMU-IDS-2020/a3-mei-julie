@@ -219,16 +219,16 @@ elif elec_year==2016:
     st.write("Dominant Political Party in 2016: Republican")
     usr=make_map(w,h,sourcer16,'reds')
     usd=make_map(w,h,sourced16,'blues')
-col1, col2= st.beta_columns([4,1])
-with col1: 
+col11, col12= st.beta_columns([4,1])
+with col11: 
     st.write("Blue States")
     st.write(usd)
-with col2: 
+with col12: 
     st.write("Red States")
     st.write(usr)
 def make_pyramid(source,title):
     st.write(title+":")
-    base=alt.Chart(source,title='year').properties(width=250,height=300)
+    base=alt.Chart(source,title='year').properties(width=225,height=300)
     color_scale = alt.Scale(domain=['republican', 'democrat'],
                             range=['#F94327', '#3668EC'])
 
@@ -254,7 +254,7 @@ def make_pyramid(source,title):
         x=alt.X('candidatevotes:Q', title='votes',scale=alt.Scale(domain=(0,5000000))),
         color=alt.Color('party:N', scale=color_scale,legend=None)
     ).mark_bar(size=20).properties(title='Republican')
-    st.write(alt.concat(left, middle, right, spacing=5))
+    st.write(alt.concat(left, middle, right, spacing=4))
 #Florida, Michigan, Minnesota, New Hampshire, Pennsylvania
 df_flo=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/florida.csv")
 df_hamp=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/hamp.csv")
@@ -264,14 +264,42 @@ df_penn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/m
 st.write("Compare and contrast between any of the top 5 swing states:")
 states = st.multiselect("Selected states:", 
                          ['Florida','Michigan','Minnesota','New Hampshire','Pennsylvania'])
+count=0
+col1, col2= st.beta_columns([4,1])
 for s in states:
     if s=='Florida':
-        make_pyramid(df_flo,s)
+        if count % 2==0:
+            with col1:
+                make_pyramid(df_flo,s)
+        else:
+            with col2:
+                make_pyramid(df_flo,s)
     elif s=='Michigan':
-        make_pyramid(df_mich,s)
+        if count % 2==0:
+            with col1:
+                make_pyramid(df_mich,s)
+        else:
+            with col2:
+                make_pyramid(df_mich,s)
     elif s=='Minnesota':
-        make_pyramid(df_minn,s)
+        if count % 2==0:
+            with col1:
+                make_pyramid(df_minn,s)
+        else:
+            with col2:
+                make_pyramid(df_minn,s)
     elif s=='New Hampshire':
-        make_pyramid(df_hamp,s)
+        if count % 2==0:
+            with col1:
+                make_pyramid(df_hamp,s)
+        else:
+            with col2:
+                make_pyramid(df_hamp,s)
     elif s=='Pennsylvania':
-        make_pyramid(df_penn,s)
+        if count % 2==0:
+            with col1:
+                make_pyramid(df_penn,s)
+        else:
+            with col2:
+                make_pyramid(df_penn,s)
+    count+=1
