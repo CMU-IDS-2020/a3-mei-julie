@@ -83,12 +83,12 @@ elif elec_year==2016:
     url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2016.csv"
 df_income=load_data(url)
 
-url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/df_voteyear.csv"
+url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/heehee.csv"
 df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.condition(alt.datum.year==elec_year,alt.value('#B1D6A9'),alt.value('#40A8A5'))
+    color=alt.condition(alt.datum.year==elec_year,alt.value('#40A8A5'),alt.value('#B1D6A9'))
 ).properties(width=550)
 st.write("Overview of Total Voters in America")
 st.write(votebars)
@@ -194,32 +194,37 @@ sourced12="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/20
 sourcer16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2016_r.csv"
 sourced16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2016_d.csv"
 st.subheader("Left or Right?: A Breakdown of Political Parties Across the States")
-
+st.text("")
 usr=None
 usd=None
 w=540
 h=350
 if elec_year==2000:
+    st.write("Dominant Political Party in 2000: Republican")
     usr=make_map(w,h,sourcer00,'reds')
     usd=make_map(w,h,sourced00,'blues')
 elif elec_year==2004:
+    st.write("Dominant Political Party in 2004: Republican")
     usr=make_map(w,h,sourcer04,'reds')
     usd=make_map(w,h,sourced04,'blues')
 elif elec_year==2008:
+    st.write("Dominant Political Party in 2008: Democratic")
     usr=make_map(w,h,sourcer08,'reds')
     usd=make_map(w,h,sourced08,'blues')
 elif elec_year==2012:
+    st.write("Dominant Political Party in 2012: Democratic")
     usr=make_map(w,h,sourcer12,'reds')
     usd=make_map(w,h,sourced12,'blues')
 elif elec_year==2016:
+    st.write("Dominant Political Party in 2016: Republican")
     usr=make_map(w,h,sourcer16,'reds')
     usd=make_map(w,h,sourced16,'blues')
 col1, col2= st.beta_columns([4,1])
 with col1: 
-    st.write("Blue States in "+str(elec_year))
+    st.write("Blue States")
     st.write(usd)
 with col2: 
-    st.write("Red States in "+str(elec_year))
+    st.write("Red States")
     st.write(usr)
 def make_pyramid(source,title):
     st.write(title+":")
