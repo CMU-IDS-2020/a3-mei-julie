@@ -1,0 +1,23 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+1976,Pennsylvania,PA,42,23,14,US President,"Ford, Gerald",republican,FALSE,2205604,4620787,20171015,NA
+1980,Pennsylvania,PA,42,23,14,US President,"Reagan, Ronald",republican,FALSE,2261872,4561501,20171015,NA
+1984,Pennsylvania,PA,42,23,14,US President,"Reagan, Ronald",republican,FALSE,2584323,4844903,20171015,NA
+1988,Pennsylvania,PA,42,23,14,US President,"Bush, George H.W.",republican,FALSE,2300087,4536251,20171015,NA
+1992,Pennsylvania,PA,42,23,14,US President,"Bush, George H.W.",republican,FALSE,1791841,4959810,20171015,NA
+1996,Pennsylvania,PA,42,23,14,US President,"Dole, Robert",republican,FALSE,1801169,4501307,20171015,NA
+2000,Pennsylvania,PA,42,23,14,US President,"Bush, George W.",republican,FALSE,2281127,4912185,20171015,NA
+2004,Pennsylvania,PA,42,23,14,US President,"Bush, George W.",republican,FALSE,2793847,5769590,20171015,NA
+2008,Pennsylvania,PA,42,23,14,US President,"McCain, John",republican,FALSE,2655885,6013272,20171015,NA
+2012,Pennsylvania,PA,42,23,14,US President,"Romney, Mitt",republican,FALSE,2680434,5742040,20171015,NA
+2016,Pennsylvania,PA,42,23,14,US President,"Trump, Donald J.",republican,FALSE,2970733,6115402,20171015,NA
+1976,Pennsylvania,PA,42,23,14,US President,"Carter, Jimmy",democrat,FALSE,2328677,4620787,20171015,NA
+1980,Pennsylvania,PA,42,23,14,US President,"Carter, Jimmy",democrat,FALSE,1937540,4561501,20171015,NA
+1984,Pennsylvania,PA,42,23,14,US President,"Mondale, Walter",democrat,FALSE,2228131,4844903,20171015,NA
+1988,Pennsylvania,PA,42,23,14,US President,"Dukakis, Michael",democrat,FALSE,2194944,4536251,20171015,NA
+1992,Pennsylvania,PA,42,23,14,US President,"Clinton, Bill",democrat,FALSE,2239164,4959810,20171015,NA
+1996,Pennsylvania,PA,42,23,14,US President,"Clinton, Bill",democrat,FALSE,2215819,4501307,20171015,NA
+2000,Pennsylvania,PA,42,23,14,US President,"Gore, Al",democrat,FALSE,2485967,4912185,20171015,NA
+2004,Pennsylvania,PA,42,23,14,US President,"Kerry, John",democrat,FALSE,2938095,5769590,20171015,NA
+2008,Pennsylvania,PA,42,23,14,US President,"Obama, Barack H.",democrat,FALSE,3276363,6013272,20171015,NA
+2012,Pennsylvania,PA,42,23,14,US President,"Obama, Barack H.",democrat,FALSE,2990274,5742040,20171015,NA
+2016,Pennsylvania,PA,42,23,14,US President,"Clinton, Hillary",democrat,FALSE,2926441,6115402,20171015,NA

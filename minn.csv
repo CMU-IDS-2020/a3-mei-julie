@@ -1,0 +1,20 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+1976,Minnesota,MN,27,41,33,US President,"Ford, Gerald",republican,FALSE,819395,1949931,20171015,NA
+1980,Minnesota,MN,27,41,33,US President,"Reagan, Ronald",republican,FALSE,873268,2051916,20171015,NA
+1984,Minnesota,MN,27,41,33,US President,"Reagan, Ronald",republican,FALSE,1032603,2084449,20171015,NA
+1988,Minnesota,MN,27,41,33,US President,"Bush, George H.W.",republican,FALSE,962337,2096790,20171015,NA
+1992,Minnesota,MN,27,41,33,US President,"Bush, George H.W.",republican,FALSE,747841,2347948,20171015,NA
+1996,Minnesota,MN,27,41,33,US President,"Dole, Robert",republican,FALSE,766395,2192492,20171015,NA
+2000,Minnesota,MN,27,41,33,US President,"Bush, George W.",republican,FALSE,1109659,2438685,20171015,NA
+2004,Minnesota,MN,27,41,33,US President,"Bush, George W.",republican,FALSE,1346695,2828387,20171015,NA
+2008,Minnesota,MN,27,41,33,US President,"McCain, John",republican,FALSE,1275409,2910369,20171015,NA
+2012,Minnesota,MN,27,41,33,US President,"Romney, Mitt",republican,FALSE,1320225,2936561,20171015,NA
+2016,Minnesota,MN,27,41,33,US President,"Trump, Donald J.",republican,FALSE,1322949,2944782,20171015,NA
+1976,Minnesota,MN,27,41,33,US President,"Carter, Jimmy",democrat,FALSE,1070440,1949931,20171015,NA
+1980,Minnesota,MN,27,41,33,US President,"Carter, Jimmy",democrat,FALSE,954173,2051916,20171015,NA
+1984,Minnesota,MN,27,41,33,US President,"Mondale, Walter",democrat,FALSE,1036364,2084449,20171015,NA
+1988,Minnesota,MN,27,41,33,US President,"Dukakis, Michael",democrat,FALSE,1109471,2096790,20171015,NA
+1992,Minnesota,MN,27,41,33,US President,"Clinton, Bill",democrat,FALSE,1020997,2347948,20171015,NA
+1996,Minnesota,MN,27,41,33,US President,"Clinton, Bill",democrat,FALSE,1120380,2192492,20171015,NA
+2008,Minnesota,MN,27,41,33,US President,"Obama, Barack H.",democrat,FALSE,1573354,2910369,20171015,NA
+2016,Minnesota,MN,27,41,33,US President,"Clinton, Hillary",democrat,FALSE,1367705,2944782,20171015,NA

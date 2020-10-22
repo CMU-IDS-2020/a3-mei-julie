@@ -1,0 +1,23 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+1976,Michigan,MI,26,34,23,US President,"Ford, Gerald",republican,FALSE,1893742,3651590,20171015,NA
+1980,Michigan,MI,26,34,23,US President,"Reagan, Ronald",republican,FALSE,1915225,3909725,20171015,NA
+1984,Michigan,MI,26,34,23,US President,"Reagan, Ronald",republican,FALSE,2251571,3801658,20171015,NA
+1988,Michigan,MI,26,34,23,US President,"Bush, George H.W.",republican,FALSE,1965486,3669163,20171015,NA
+1992,Michigan,MI,26,34,23,US President,"Bush, George H.W.",republican,FALSE,1554940,4274673,20171015,NA
+1996,Michigan,MI,26,34,23,US President,"Dole, Robert",republican,FALSE,1481212,3848844,20171015,NA
+2000,Michigan,MI,26,34,23,US President,"Bush, George W.",republican,FALSE,1953139,4232501,20171015,NA
+2004,Michigan,MI,26,34,23,US President,"Bush, George W.",republican,FALSE,2313746,4839252,20171015,NA
+2008,Michigan,MI,26,34,23,US President,"McCain, John",republican,FALSE,2048639,5001596,20171015,NA
+2012,Michigan,MI,26,34,23,US President,"Romney, Mitt",republican,FALSE,2115256,4730961,20171015,NA
+2016,Michigan,MI,26,34,23,US President,"Trump, Donald J.",republican,FALSE,2279543,4799284,20171015,NA
+1976,Michigan,MI,26,34,23,US President,"Carter, Jimmy",democrat,FALSE,1696714,3651590,20171015,NA
+1980,Michigan,MI,26,34,23,US President,"Carter, Jimmy",democrat,FALSE,1661532,3909725,20171015,NA
+1984,Michigan,MI,26,34,23,US President,"Mondale, Walter",democrat,FALSE,1529638,3801658,20171015,NA
+1988,Michigan,MI,26,34,23,US President,"Dukakis, Michael",democrat,FALSE,1675783,3669163,20171015,NA
+1992,Michigan,MI,26,34,23,US President,"Clinton, Bill",democrat,FALSE,1871182,4274673,20171015,NA
+1996,Michigan,MI,26,34,23,US President,"Clinton, Bill",democrat,FALSE,1989653,3848844,20171015,NA
+2000,Michigan,MI,26,34,23,US President,"Gore, Al",democrat,FALSE,2170418,4232501,20171015,NA
+2004,Michigan,MI,26,34,23,US President,"Kerry, John",democrat,FALSE,2479183,4839252,20171015,NA
+2008,Michigan,MI,26,34,23,US President,"Obama, Barack H.",democrat,FALSE,2872579,5001596,20171015,NA
+2012,Michigan,MI,26,34,23,US President,"Obama, Barack H.",democrat,FALSE,2564569,4730961,20171015,NA
+2016,Michigan,MI,26,34,23,US President,"Clinton, Hillary",democrat,FALSE,2268839,4799284,20171015,NA

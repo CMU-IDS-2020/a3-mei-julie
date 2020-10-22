@@ -1,0 +1,23 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+1976,New Hampshire,NH,33,12,4,US President,"Ford, Gerald",republican,FALSE,185935,339627,20171015,NA
+1980,New Hampshire,NH,33,12,4,US President,"Reagan, Ronald",republican,FALSE,221705,383990,20171015,NA
+1984,New Hampshire,NH,33,12,4,US President,"Reagan, Ronald",republican,FALSE,267050,388904,20171015,NA
+1988,New Hampshire,NH,33,12,4,US President,"Bush, George H.W.",republican,FALSE,281537,450525,20171015,NA
+1992,New Hampshire,NH,33,12,4,US President,"Bush, George H.W.",republican,FALSE,202484,537215,20171015,NA
+1996,New Hampshire,NH,33,12,4,US President,"Dole, Robert",republican,FALSE,196486,496597,20171015,NA
+2000,New Hampshire,NH,33,12,4,US President,"Bush, George W.",republican,FALSE,273559,569081,20171015,NA
+2004,New Hampshire,NH,33,12,4,US President,"Bush, George W.",republican,FALSE,331237,678287,20171015,NA
+2008,New Hampshire,NH,33,12,4,US President,"McCain, John",republican,FALSE,316534,710970,20171015,NA
+2012,New Hampshire,NH,33,12,4,US President,"Romney, Mitt",republican,FALSE,329918,710972,20171015,NA
+2016,New Hampshire,NH,33,12,4,US President,"Trump, Donald J.",republican,FALSE,345790,744296,20171015,NA
+1976,New Hampshire,NH,33,12,4,US President,"Carter, Jimmy",democrat,FALSE,147645,339627,20171015,NA
+1980,New Hampshire,NH,33,12,4,US President,"Carter, Jimmy",democrat,FALSE,108864,383990,20171015,NA
+1984,New Hampshire,NH,33,12,4,US President,"Mondale, Walter",democrat,FALSE,120347,388904,20171015,NA
+1988,New Hampshire,NH,33,12,4,US President,"Dukakis, Michael",democrat,FALSE,163696,450525,20171015,NA
+1992,New Hampshire,NH,33,12,4,US President,"Clinton, Bill",democrat,FALSE,209040,537215,20171015,NA
+1996,New Hampshire,NH,33,12,4,US President,"Clinton, Bill",democrat,FALSE,246166,496597,20171015,NA
+2000,New Hampshire,NH,33,12,4,US President,"Gore, Al",democrat,FALSE,266348,569081,20171015,NA
+2004,New Hampshire,NH,33,12,4,US President,"Kerry, John",democrat,FALSE,340511,678287,20171015,NA
+2008,New Hampshire,NH,33,12,4,US President,"Obama, Barack H.",democrat,FALSE,384826,710970,20171015,NA
+2012,New Hampshire,NH,33,12,4,US President,"Obama, Barack H.",democrat,FALSE,369561,710972,20171015,NA
+2016,New Hampshire,NH,33,12,4,US President,"Clinton, Hillary",democrat,FALSE,348526,744296,20171015,NA

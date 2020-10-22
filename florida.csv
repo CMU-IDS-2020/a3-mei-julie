@@ -1,0 +1,23 @@
+year,state,state_po,state_fips,state_cen,state_ic,office,candidate,party,writein,candidatevotes,totalvotes,version,notes
+1976,Florida,FL,12,59,43,US President,"Ford, Gerald",republican,FALSE,1469531,3150631,20171015,NA
+1980,Florida,FL,12,59,43,US President,"Reagan, Ronald",republican,FALSE,2046951,3686927,20171015,NA
+1984,Florida,FL,12,59,43,US President,"Reagan, Ronald",republican,FALSE,2730350,4180051,20171015,NA
+1988,Florida,FL,12,59,43,US President,"Bush, George H.W.",republican,FALSE,2618885,4302313,20171015,NA
+1992,Florida,FL,12,59,43,US President,"Bush, George H.W.",republican,FALSE,2173310,5313392,20171015,NA
+1996,Florida,FL,12,59,43,US President,"Dole, Robert",republican,FALSE,2244536,5303154,20171015,NA
+2000,Florida,FL,12,59,43,US President,"Bush, George W.",republican,FALSE,2912790,5963110,20171015,NA
+2004,Florida,FL,12,59,43,US President,"Bush, George W.",republican,FALSE,3964522,7609810,20171015,NA
+2008,Florida,FL,12,59,43,US President,"McCain, John",republican,FALSE,4045624,8390744,20171015,NA
+2012,Florida,FL,12,59,43,US President,"Romney, Mitt",republican,FALSE,4163447,8474179,20171015,NA
+2016,Florida,FL,12,59,43,US President,"Trump, Donald J.",republican,FALSE,4617886,9420039,20171015,NA
+1976,Florida,FL,12,59,43,US President,"Carter, Jimmy",democrat,FALSE,1636000,3150631,20171015,NA
+1980,Florida,FL,12,59,43,US President,"Carter, Jimmy",democrat,FALSE,1419475,3686927,20171015,NA
+1984,Florida,FL,12,59,43,US President,"Mondale, Walter",democrat,FALSE,1448816,4180051,20171015,NA
+1988,Florida,FL,12,59,43,US President,"Dukakis, Michael",democrat,FALSE,1656701,4302313,20171015,NA
+1992,Florida,FL,12,59,43,US President,"Clinton, Bill",democrat,FALSE,2071698,5313392,20171015,NA
+1996,Florida,FL,12,59,43,US President,"Clinton, Bill",democrat,FALSE,2546870,5303154,20171015,NA
+2000,Florida,FL,12,59,43,US President,"Gore, Al",democrat,FALSE,2912253,5963110,20171015,NA
+2004,Florida,FL,12,59,43,US President,"Kerry, John",democrat,FALSE,3583544,7609810,20171015,NA
+2008,Florida,FL,12,59,43,US President,"Obama, Barack H.",democrat,FALSE,4282074,8390744,20171015,NA
+2012,Florida,FL,12,59,43,US President,"Obama, Barack H.",democrat,FALSE,4237756,8474179,20171015,NA
+2016,Florida,FL,12,59,43,US President,"Clinton, Hillary",democrat,FALSE,4504975,9420039,20171015,NA
