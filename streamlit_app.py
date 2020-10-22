@@ -2,19 +2,22 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from vega_datasets import data
-import duckdb
+# import duckdb
 import requests
 import io
 
-def create_db(command):
-    con=duckdb.connect(database=":memory:",read_only=False)
-    con.execute(command)
-    return con
+# def create_db(command):
+#     con=duckdb.connect(database=":memory:",read_only=False)
+#     con.execute(command)
+#     return con
 
-def query(query):
-    con.execute(query)
-    df=con.fetchdf()
-    return df
+# def query(query):
+#     con.execute(query)
+#     df=con.fetchdf()
+#     return df
+@st.cache  # add caching so we load the data only once
+def load_data(url):
+    return pd.read_csv(url)
 
 def make_map(w,h,source):
     return alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
@@ -40,28 +43,28 @@ def make_chart(source):
                 scale=alt.Scale(range=['#ffcc5c','#96ceb4']))
     ).properties(width=600)
 
-create_db_comm="create table votes as select * from read_csv_auto('2000-2016-president.csv');"
-con=create_db(create_db_comm)
+# create_db_comm="create table votes as select * from read_csv_auto('2000-2016-president.csv');"
+# con=create_db(create_db_comm)
 
-qq="""select year, sum(totalvotes) as totalvotes
-        from votes
-        group by year
-        order by year"""
-df_voteyear=query(qq)
-# con.execute("COPY vote_year TO 'vote_year.csv'")
+# qq="""create table vote_year as select year, sum(totalvotes) as totalvotes
+#         from votes
+#         group by year
+#         order by year"""
+# df_voteyear=query(qq)
+# con.execute("COPY vote_year TO 'df_voteyear.csv'")
 states=alt.topo_feature(data.us_10m.url, 'states')
 
-comm="""create table p_votes as select state,year,party,cast(candidatevotes as float)/cast(totalvotes as float) as perc_votes from votes"""
-df=query(comm)
-command ="""create table extra as (select m.state,m.year,m.party,t.votes
-            from (
-            select state,year,max(perc_votes) as votes
-            from p_votes
-            group by state,year
-            ) t join p_votes m on m.state=t.state and m.year=t.year and t.votes=m.perc_votes
-            order by m.state)"""
-create_db_comm="create table income_t as select * from read_csv_auto('income.csv');"
-con=create_db(create_db_comm)
+# comm="""create table p_votes as select state,year,party,cast(candidatevotes as float)/cast(totalvotes as float) as perc_votes from votes"""
+# df=query(comm)
+# command ="""create table extra as (select m.state,m.year,m.party,t.votes
+#             from (
+#             select state,year,max(perc_votes) as votes
+#             from p_votes
+#             group by state,year
+#             ) t join p_votes m on m.state=t.state and m.year=t.year and t.votes=m.perc_votes
+#             order by m.state)"""
+# create_db_comm="create table income_t as select * from read_csv_auto('income.csv');"
+# con=create_db(create_db_comm)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
 
@@ -89,27 +92,24 @@ year2012=make_chart(source4)
 year2016=make_chart(source5)
 
 ####INCOME#####
-allyear_income=query("select * from income_t where year !=2000")
-df_income=None
+url=None
 if elec_year==2000:
-    comm="""select * from income_t where year=2000"""
-    df_income=query(comm)
+    url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2000.csv"
 elif elec_year==2004:
-    comm="""select * from income_t where year=2004"""
-    df_income=query(comm)
+    # comm="""create table income2004 as select * from income_t where year=2004"""
+    # df_income=query(comm)
+    url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2004.csv"
 elif elec_year==2008:
-    comm="""select * from income_t where year=2008"""
-    df_income=query(comm)
+    url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2008.csv"
 elif elec_year==2012:
-    # create_db_comm="create table income as select * from read_csv_auto('income_2012.csv');"
-    # con=create_db(create_db_comm)
-    comm="""select * from income_t where year=2012"""
-    df_income=query(comm)
+    url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2012.csv"
 elif elec_year==2016:
-    comm="""select * from income_t where year=2016"""
-    df_income=query(comm)
+    url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2016.csv"
+df_income=load_data(url)
 
 # selector = alt.selection_single(fields=['totalvotes'])
+url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/df_voteyear.csv"
+df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
@@ -177,19 +177,6 @@ if dem_type=='Age':
     elif elec_year==2016:
         st.write(year2016)
 elif dem_type=='Income':
-    ####HEAT MAP#####
-    income_y=alt.Chart(allyear_income).mark_rect().encode(
-        x=alt.X(field='test',type="nominal",title='income',scale=alt.Scale(domain=["Under $10,000","$10,000 to $14,999","$15,000 to $19,999","$20,000 to $29,999",
-                                                        "$30,000 to $39,999","$40,000 to $49,999","$50,000 to $74,999",
-                                                        "$75,000 to $99,999","$100,000 to $149,999","$150,000 and over",
-                                                        "Income not reported"])),
-        y='year:O',
-        color='votes:Q'
-    ).properties(
-        width=600,
-        height=300
-    )
-    # st.write(income_y)
     ####BINNED PLOT####
     income=None
     if elec_year==2000:
@@ -248,37 +235,42 @@ elif elec_year==2016:
     us=make_map(w,h,source16)
 st.write(us)
 
-create_db_comm="create table votes as select * from read_csv_auto('republican.csv');"
-con=create_db(create_db_comm)
-comm="""select * from votes where state='California'"""
-df_votes=query(comm)
-# st.write(df_votes)
-# con.execute("COPY vv TO 'demo.csv'")
-base=alt.Chart(df_votes).properties(width=250,height=300)
-color_scale = alt.Scale(domain=['republican', 'democrat'],
-                        range=['#F94327', '#3668EC'])
+# create_db_comm="create table votes as select * from read_csv_auto('republican.csv');"
+# con=create_db(create_db_comm)
+# comm="""select * from votes where state='California'"""
+# df_votes=query(comm)
+# # st.write(df_votes)
+# # con.execute("COPY vv TO 'demo.csv'")
+# base=alt.Chart(df_votes).properties(width=250,height=300)
+# color_scale = alt.Scale(domain=['republican', 'democrat'],
+#                         range=['#F94327', '#3668EC'])
 
-left = base.transform_filter(
-    alt.datum.party == 'democrat'
-).encode(
-    y=alt.Y('year:O', axis=None),
-    x=alt.X('candidatevotes:Q', scale=alt.Scale(domain=(0,8500000)),
-            title='votes',
-            sort=alt.SortOrder('descending')),
-    color=alt.Color('party:N', scale=color_scale, legend=None)
-).mark_bar(size=20).properties(title='Democrat')
+# left = base.transform_filter(
+#     alt.datum.party == 'democrat'
+# ).encode(
+#     y=alt.Y('year:O', axis=None),
+#     x=alt.X('candidatevotes:Q', scale=alt.Scale(domain=(0,8500000)),
+#             title='votes',
+#             sort=alt.SortOrder('descending')),
+#     color=alt.Color('party:N', scale=color_scale, legend=None)
+# ).mark_bar(size=20).properties(title='Democrat')
 
-middle = base.encode(
-    y=alt.Y('year:O', axis=None),
-    text=alt.Text('year:Q'),
-).mark_text().properties(width=27)
+# middle = base.encode(
+#     y=alt.Y('year:O', axis=None),
+#     text=alt.Text('year:Q'),
+# ).mark_text().properties(width=27)
 
-right = base.transform_filter(
-    alt.datum.party == 'republican'
-).encode(
-    y=alt.Y('year:O', axis=None),
-    x=alt.X('candidatevotes:Q', title='votes',scale=alt.Scale(domain=(0,8500000))),
-    color=alt.Color('party:N', scale=color_scale,legend=None)
-).mark_bar(size=20).properties(title='Republican')
+# right = base.transform_filter(
+#     alt.datum.party == 'republican'
+# ).encode(
+#     y=alt.Y('year:O', axis=None),
+#     x=alt.X('candidatevotes:Q', title='votes',scale=alt.Scale(domain=(0,8500000))),
+#     color=alt.Color('party:N', scale=color_scale,legend=None)
+# ).mark_bar(size=20).properties(title='Republican')
 
-st.write(alt.concat(left, middle, right, spacing=5))
+# st.write(alt.concat(left, middle, right, spacing=5))
+
+#Florida, Michigan, Minnesota, New Hampshire, Pennsylvania
+# artists = st.multiselect("Who are your favorite artists?", 
+#                          ["Michael Jackson", "Elvis Presley",
+#                          "Eminem", "Billy Joel", "Madonna"])
