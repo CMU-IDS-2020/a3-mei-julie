@@ -1,4 +1,4 @@
-state,year,party,percent_votes,id
+state,year,party,percent_votes,id 
 California,2000,democrat,0.5344974,6
 Connecticut,2000,democrat,0.5590963,9
 Delaware,2000,democrat,0.54977727,10
