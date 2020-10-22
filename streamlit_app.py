@@ -204,8 +204,11 @@ usd=None
 w=540
 h=350
 
+
 if elec_year==2000:
+    st.write("Republican Votes")
     usr=make_map(w,h,sourcer00,'reds')
+    st.write("Democratic Votes")
     usd=make_map(w,h,sourced00,'blues')
 # elif elec_year==2004:
 #     us=make_map(w,h,source04)
@@ -252,7 +255,7 @@ df_hamp=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/m
 df_minn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/minn.csv")
 df_mich=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/mich.csv")
 df_penn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/penn.csv")
-states = st.multiselect("Chosen swing states:", 
+states = st.multiselect("Top 5 Swing States:", 
                          ['Florida','Michigan','Minnesota','New Hampshire','Pennsylvania'])
 for s in states:
     if s=='Florida':
