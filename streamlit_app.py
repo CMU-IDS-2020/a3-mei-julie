@@ -2,19 +2,9 @@ import streamlit as st
 import pandas as pd
 import altair as alt
 from vega_datasets import data
-# import duckdb
 import requests
 import io
 
-# def create_db(command):
-#     con=duckdb.connect(database=":memory:",read_only=False)
-#     con.execute(command)
-#     return con
-
-# def query(query):
-#     con.execute(query)
-#     df=con.fetchdf()
-#     return df
 @st.cache  # add caching so we load the data only once
 def load_data(url):
     return pd.read_csv(url)
@@ -234,43 +224,50 @@ elif elec_year==2012:
 elif elec_year==2016:
     us=make_map(w,h,source16)
 st.write(us)
+def make_pyramid(source):
+    base=alt.Chart(source).properties(width=250,height=300)
+    color_scale = alt.Scale(domain=['republican', 'democrat'],
+                            range=['#F94327', '#3668EC'])
 
-# create_db_comm="create table votes as select * from read_csv_auto('republican.csv');"
-# con=create_db(create_db_comm)
-# comm="""select * from votes where state='California'"""
-# df_votes=query(comm)
-# # st.write(df_votes)
-# # con.execute("COPY vv TO 'demo.csv'")
-# base=alt.Chart(df_votes).properties(width=250,height=300)
-# color_scale = alt.Scale(domain=['republican', 'democrat'],
-#                         range=['#F94327', '#3668EC'])
+    left = base.transform_filter(
+        alt.datum.party == 'democrat'
+    ).encode(
+        y=alt.Y('year:O', axis=None),
+        x=alt.X('candidatevotes:Q', scale=alt.Scale(domain=(0,5000000)),
+                title='votes',
+                sort=alt.SortOrder('descending')),
+        color=alt.Color('party:N', scale=color_scale, legend=None)
+    ).mark_bar(size=20).properties(title='Democrat')
 
-# left = base.transform_filter(
-#     alt.datum.party == 'democrat'
-# ).encode(
-#     y=alt.Y('year:O', axis=None),
-#     x=alt.X('candidatevotes:Q', scale=alt.Scale(domain=(0,8500000)),
-#             title='votes',
-#             sort=alt.SortOrder('descending')),
-#     color=alt.Color('party:N', scale=color_scale, legend=None)
-# ).mark_bar(size=20).properties(title='Democrat')
+    middle = base.encode(
+        y=alt.Y('year:O', axis=None),
+        text=alt.Text('year:Q'),
+    ).mark_text().properties(width=27)
 
-# middle = base.encode(
-#     y=alt.Y('year:O', axis=None),
-#     text=alt.Text('year:Q'),
-# ).mark_text().properties(width=27)
-
-# right = base.transform_filter(
-#     alt.datum.party == 'republican'
-# ).encode(
-#     y=alt.Y('year:O', axis=None),
-#     x=alt.X('candidatevotes:Q', title='votes',scale=alt.Scale(domain=(0,8500000))),
-#     color=alt.Color('party:N', scale=color_scale,legend=None)
-# ).mark_bar(size=20).properties(title='Republican')
-
-# st.write(alt.concat(left, middle, right, spacing=5))
-
+    right = base.transform_filter(
+        alt.datum.party == 'republican'
+    ).encode(
+        y=alt.Y('year:O', axis=None),
+        x=alt.X('candidatevotes:Q', title='votes',scale=alt.Scale(domain=(0,5000000))),
+        color=alt.Color('party:N', scale=color_scale,legend=None)
+    ).mark_bar(size=20).properties(title='Republican')
+    st.write(alt.concat(left, middle, right, spacing=5))
 #Florida, Michigan, Minnesota, New Hampshire, Pennsylvania
-# artists = st.multiselect("Who are your favorite artists?", 
-#                          ["Michael Jackson", "Elvis Presley",
-#                          "Eminem", "Billy Joel", "Madonna"])
+df_flo=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/florida.csv")
+df_hamp=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/hamp.csv")
+df_minn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/minn.csv")
+df_mich=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/mich.csv")
+df_penn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/penn.csv")
+states = st.multiselect("Chosen swing states", 
+                         ['Florida','Michigan','Minnesota','New Hampshire','Pennsylvania'])
+for s in states:
+    if s=='Florida':
+        make_pyramid(df_flo)
+    elif s=='Michigan':
+        make_pyramid(df_mich)
+    elif s=='Minnesota':
+        make_pyramid(df_minn)
+    elif s=='New Hampshire':
+        make_pyramid(df_hamp)
+    elif s=='Pennsylvania':
+        make_pyramid(df_penn)
