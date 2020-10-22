@@ -9,9 +9,12 @@ import io
 def load_data(url):
     return pd.read_csv(url)
 
-def make_map(w,h,source):
-    return alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
-        color=alt.Color("p_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(domain=(0.5,0.8))),
+def make_map(w,h,source,color):
+    base=alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1,fill='#6F6F6F').encode().project(
+        type='albersUsa'
+        ).properties(width=w,height=h)
+    party=alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
+        color=alt.Color("p_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(scheme=color,domain=(0.5,0.8))),
         tooltip=[alt.Tooltip('state:N',title="State"),alt.Tooltip('party:N',title="Party"),alt.Tooltip('p_votes:O',title="% Votes")]
     ).transform_lookup(
         lookup='id',
@@ -22,6 +25,7 @@ def make_map(w,h,source):
         width=w,
         height=h
     )
+    return base+party
 def make_chart(source):
     return alt.Chart(source).transform_fold(
         ['Voted','Not Voted'],
@@ -32,29 +36,6 @@ def make_chart(source):
         color=alt.Color('column:N', title="Legend",
                 scale=alt.Scale(range=['#ffcc5c','#96ceb4']))
     ).properties(width=600)
-
-# create_db_comm="create table votes as select * from read_csv_auto('2000-2016-president.csv');"
-# con=create_db(create_db_comm)
-
-# qq="""create table vote_year as select year, sum(totalvotes) as totalvotes
-#         from votes
-#         group by year
-#         order by year"""
-# df_voteyear=query(qq)
-# con.execute("COPY vote_year TO 'df_voteyear.csv'")
-states=alt.topo_feature(data.us_10m.url, 'states')
-
-# comm="""create table p_votes as select state,year,party,cast(candidatevotes as float)/cast(totalvotes as float) as perc_votes from votes"""
-# df=query(comm)
-# command ="""create table extra as (select m.state,m.year,m.party,t.votes
-#             from (
-#             select state,year,max(perc_votes) as votes
-#             from p_votes
-#             group by state,year
-#             ) t join p_votes m on m.state=t.state and m.year=t.year and t.votes=m.perc_votes
-#             order by m.state)"""
-# create_db_comm="create table income_t as select * from read_csv_auto('income.csv');"
-# con=create_db(create_db_comm)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
 
@@ -209,21 +190,29 @@ source08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2
 source12 = "https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2012.csv"
 source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2016.csv"
 
+
+sourcer00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_r.csv"
+sourced00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_d.csv"
 st.subheader("A Breakdown of Political Parties Across the States")
-us=None
-w=800
-h=500
+usr=None
+usd=None
+w=540
+h=350
+
 if elec_year==2000:
-    us=make_map(w,h,source00)
-elif elec_year==2004:
-    us=make_map(w,h,source04)
-elif elec_year==2008:
-    us=make_map(w,h,source08)
-elif elec_year==2012:
-    us=make_map(w,h,source12)
-elif elec_year==2016:
-    us=make_map(w,h,source16)
-st.write(us)
+    usr=make_map(w,h,sourcer00,'reds')
+    usd=make_map(w,h,sourced00,'blues')
+# elif elec_year==2004:
+#     us=make_map(w,h,source04)
+# elif elec_year==2008:
+#     us=make_map(w,h,source08)
+# elif elec_year==2012:
+#     us=make_map(w,h,source12)
+# elif elec_year==2016:
+#     us=make_map(w,h,source16)
+col1, col2= st.beta_columns([4,1])
+with col1: st.write(usr)
+with col2: st.write(usd)
 def make_pyramid(source):
     base=alt.Chart(source).properties(width=250,height=300)
     color_scale = alt.Scale(domain=['republican', 'democrat'],
@@ -258,7 +247,7 @@ df_hamp=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/m
 df_minn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/minn.csv")
 df_mich=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/mich.csv")
 df_penn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/penn.csv")
-states = st.multiselect("Chosen swing states", 
+states = st.multiselect("Chosen swing states:", 
                          ['Florida','Michigan','Minnesota','New Hampshire','Pennsylvania'])
 for s in states:
     if s=='Florida':
