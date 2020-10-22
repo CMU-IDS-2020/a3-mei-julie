@@ -88,7 +88,7 @@ df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.condition(alt.datum.year==elec_year,alt.value('#B1D6A9'),alt.value('light blue'))
+    color=alt.condition(alt.datum.year==elec_year,alt.value('#B1D6A9'),alt.value('#40A8A5'))
 ).properties(width=600)
 st.write(votebars)
 
