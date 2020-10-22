@@ -13,12 +13,13 @@ def make_map(w,h,source,color):
     base=alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1,fill='#6F6F6F').encode().project(
         type='albersUsa'
         ).properties(width=w,height=h)
+
     party=alt.Chart(states).mark_geoshape(stroke='lightgray',strokeWidth=1).encode(
-        color=alt.Color("p_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(scheme=color,domain=(0.45,0.8))),
-        tooltip=[alt.Tooltip('state:N',title="State"),alt.Tooltip('party:N',title="Party"),alt.Tooltip('p_votes:O',title="% Votes")]
+        color=alt.Color("percent_votes:Q",legend=alt.Legend(title="Percent Votes",tickCount=5),scale=alt.Scale(scheme=color,domain=(0.45,0.8))),
+        tooltip=[alt.Tooltip('state:N',title="State"),alt.Tooltip('percent_votes:O',title="% Votes")]
     ).transform_lookup(
         lookup='id',
-        from_=alt.LookupData(source, 'id', ['p_votes','party','state'])
+        from_=alt.LookupData(source, 'id ', ['percent_votes','state'])
     ).project(
         type='albersUsa'
     ).properties(
@@ -32,7 +33,7 @@ def make_chart(source):
         as_=['column','value']
     ).mark_bar(size=30).encode(
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
-        y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
+        y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes (in thousands)")),
         color=alt.Color('column:N', title="Legend",
                 scale=alt.Scale(range=['#F9EFAA', '#40A8A5']))
     ).properties(width=600)
@@ -44,7 +45,7 @@ st.title("Who Made 👴🏻,👴🏻,👴🏽,👴🏻 President?")
 st.write("This visualization explores demographics of voters for the past elections starting from 2000. How can you make a difference for your demographic for the upcoming 2020 election?")
 
 st.subheader("Who voted?: A Breakdown of the Voting Population")
-
+st.text("")
 ####AGE#####
 url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/AgeData.csv"
 s=requests.get(url).content
@@ -82,18 +83,18 @@ elif elec_year==2016:
     url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/income2016.csv"
 df_income=load_data(url)
 
-# selector = alt.selection_single(fields=['totalvotes'])
 url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/df_voteyear.csv"
 df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
     color=alt.condition(alt.datum.year==elec_year,alt.value('#B1D6A9'),alt.value('#40A8A5'))
-).properties(width=600)
+).properties(width=550)
+st.write("Overview of Total Voters in America")
 st.write(votebars)
 
 dem_type = st.selectbox(
-    "Select a category:",
+    "Select a demographic:",
     ("Age", "Income", "Race")
 )
 #####RACE#####
@@ -106,41 +107,25 @@ source2 = c.loc[c["Race"] == "Black"]
 source3 = c.loc[c["Race"] == "Hispanic"]
 source4 = c.loc[c["Race"] == "White"]
 
-
-asianchart=alt.Chart(source1).mark_area(opacity=0.7).encode(
+def make_area(source,race):
+    return alt.Chart(source,title=race).mark_area(opacity=0.7).encode(
     x="Year:O",
-    y=alt.Y("Number_of_Votes:Q", stack=None, title='[Asian] Number of Votes'),
+    y=alt.Y("Number_of_Votes:Q", stack=None, title='Number of Votes (in thousands)'),
     color=alt.Color("Label:N",
             scale=alt.Scale(
                 range=['#F8EA61','#80C77F','#308685']))
-).properties(height=300, width=500)
+    ).properties(height=300, width=500)
+asianchart=make_area(source1,'Asian')
 
-blackchart=alt.Chart(source2).mark_area(opacity=0.7).encode(
-    x="Year:O",
-    y=alt.Y("Number_of_Votes:Q", stack=None, title='[Black] Number of Votes'),
-    color=alt.Color("Label:N",
-            scale=alt.Scale(
-                range=['#F8EA61','#80C77F','#308685']))
-).properties(height=300, width=500)
+blackchart=make_area(source2,'Black')
 
-hispanicchart=alt.Chart(source3).mark_area(opacity=0.7).encode(
-    x="Year:O",
-    y=alt.Y("Number_of_Votes:Q", stack=None, title='[Hispanic] Number of Votes'),
-    color=alt.Color("Label:N",
-            scale=alt.Scale(
-                range=['#F8EA61','#80C77F','#308685']))
-).properties(height=300, width=500)
+hispanicchart=make_area(source3,'Hispanic')
 
-whitechart=alt.Chart(source4).mark_area(opacity=0.7).encode(
-    x="Year:O",
-    y=alt.Y("Number_of_Votes:Q", stack=None, title='[White] Number of Votes'),
-    color=alt.Color("Label:N",
-            scale=alt.Scale(
-                range=['#F8EA61','#80C77F','#308685']))
-).properties(height=300, width=500)
+whitechart=make_area(source4,'White')
 
 ####WRITE GRAPHS######
 if dem_type=='Age':
+    st.write("Voter Ages for "+str(elec_year))
     if elec_year==2000:
         st.write(year2000)
     elif elec_year==2004:
@@ -152,6 +137,7 @@ if dem_type=='Age':
     elif elec_year==2016:
         st.write(year2016)
 elif dem_type=='Income':
+    st.write("Voter Incomes for "+str(elec_year))
     ####BINNED PLOT####
     income=None
     if elec_year==2000:
@@ -172,13 +158,15 @@ elif dem_type=='Income':
                                                             "$75,000 to $99,999","$100,000 to $149,999","$150,000 and over",
                                                             "Income not reported"])),
         y=alt.Y(field='status',type='nominal',title='Status',scale=alt.Scale(domain=['voted','registered','not registered'])),
-        size='# of People:Q'
+        size=alt.Size('# of People:Q'),
+        tooltip=[alt.Tooltip('test:N',title="Income"),alt.Tooltip('# of People:O')]
         ).properties(
             width=500,
             height=350
         )
     st.write(income)
 elif dem_type=='Race':
+    st.write("Voters by Race Between 2000 and 2016")
     st.write(whitechart)
     st.write(blackchart)
     st.write(asianchart)
@@ -197,32 +185,45 @@ source16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/y_2
 
 sourcer00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_r.csv"
 sourced00="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2000_d.csv"
+sourcer04="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2004_r.csv"
+sourced04="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2004_d.csv"
+sourcer08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2008_r.csv"
+sourced08="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2008_d.csv"
+sourcer12="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2012_r.csv"
+sourced12="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2012_d.csv"
+sourcer16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2016_r.csv"
+sourced16="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/2016_d.csv"
 st.subheader("Left or Right?: A Breakdown of Political Parties Across the States")
 
 usr=None
 usd=None
 w=540
 h=350
-
-
 if elec_year==2000:
-    st.write("Republican Votes")
     usr=make_map(w,h,sourcer00,'reds')
-    st.write("Democratic Votes")
     usd=make_map(w,h,sourced00,'blues')
-# elif elec_year==2004:
-#     us=make_map(w,h,source04)
-# elif elec_year==2008:
-#     us=make_map(w,h,source08)
-# elif elec_year==2012:
-#     us=make_map(w,h,source12)
-# elif elec_year==2016:
-#     us=make_map(w,h,source16)
+elif elec_year==2004:
+    usr=make_map(w,h,sourcer04,'reds')
+    usd=make_map(w,h,sourced04,'blues')
+elif elec_year==2008:
+    usr=make_map(w,h,sourcer08,'reds')
+    usd=make_map(w,h,sourced08,'blues')
+elif elec_year==2012:
+    usr=make_map(w,h,sourcer12,'reds')
+    usd=make_map(w,h,sourced12,'blues')
+elif elec_year==2016:
+    usr=make_map(w,h,sourcer16,'reds')
+    usd=make_map(w,h,sourced16,'blues')
 col1, col2= st.beta_columns([4,1])
-with col1: st.write(usr)
-with col2: st.write(usd)
-def make_pyramid(source):
-    base=alt.Chart(source).properties(width=250,height=300)
+with col1: 
+    st.write("Blue States in "+str(elec_year))
+    st.write(usd)
+with col2: 
+    st.write("Red States in "+str(elec_year))
+    st.write(usr)
+def make_pyramid(source,title):
+    st.write(title+":")
+    base=alt.Chart(source,title='year').properties(width=250,height=300)
     color_scale = alt.Scale(domain=['republican', 'democrat'],
                             range=['#F94327', '#3668EC'])
 
@@ -239,7 +240,7 @@ def make_pyramid(source):
     middle = base.encode(
         y=alt.Y('year:O', axis=None),
         text=alt.Text('year:Q'),
-    ).mark_text().properties(width=27)
+    ).mark_text().properties(width=30)
 
     right = base.transform_filter(
         alt.datum.party == 'republican'
@@ -255,16 +256,17 @@ df_hamp=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/m
 df_minn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/minn.csv")
 df_mich=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/mich.csv")
 df_penn=load_data("https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/penn.csv")
-states = st.multiselect("Top 5 Swing States:", 
+st.write("Compare and contrast between any of the top 5 swing states:")
+states = st.multiselect("Selected states:", 
                          ['Florida','Michigan','Minnesota','New Hampshire','Pennsylvania'])
 for s in states:
     if s=='Florida':
-        make_pyramid(df_flo)
+        make_pyramid(df_flo,s)
     elif s=='Michigan':
-        make_pyramid(df_mich)
+        make_pyramid(df_mich,s)
     elif s=='Minnesota':
-        make_pyramid(df_minn)
+        make_pyramid(df_minn,s)
     elif s=='New Hampshire':
-        make_pyramid(df_hamp)
+        make_pyramid(df_hamp,s)
     elif s=='Pennsylvania':
-        make_pyramid(df_penn)
+        make_pyramid(df_penn,s)
