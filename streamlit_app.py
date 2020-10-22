@@ -34,7 +34,7 @@ def make_chart(source):
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
         y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
         color=alt.Color('column:N', title="Legend",
-                scale=alt.Scale(range=['#80C77F','#308685']))
+                scale=alt.Scale(range=['#308685', '#80C77F']))
     ).properties(width=600)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
@@ -89,7 +89,7 @@ df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.condition(alt.datum.year==elec_year,alt.value('#308685'),alt.value('69CAD2'))
+    color=alt.condition(alt.datum.year==elec_year,alt.value('#308685'),alt.value('light blue'))
 ).properties(width=600)
 st.write(votebars)
 
@@ -156,7 +156,7 @@ elif dem_type=='Income':
     ####BINNED PLOT####
     income=None
     if elec_year==2000:
-        income=alt.Chart(df_income).mark_circle(color='#308685').encode(
+        income=alt.Chart(df_income).mark_circle(color='#F8EA61').encode(
         x=alt.X(field='test',type="nominal",title='Income',scale=alt.Scale(domain=["Under $5,000","$5,000 to $9,999","$10,000 to $14,999","$15,000 to $24,999",
                                                             "$25,000 to $34,999","$35,000 to $49,999","$50,000 to $74,999",
                                                             "$75,000 and over", "Income not reported"])),
@@ -167,7 +167,7 @@ elif dem_type=='Income':
             height=350
         )
     else:
-        income=alt.Chart(df_income).mark_circle(color='#308685').encode(
+        income=alt.Chart(df_income).mark_circle(color='#F8EA61').encode(
         x=alt.X(field='test',type="nominal",title='Income',scale=alt.Scale(domain=["Under $10,000","$10,000 to $14,999","$15,000 to $19,999","$20,000 to $29,999",
                                                             "$30,000 to $39,999","$40,000 to $49,999","$50,000 to $74,999",
                                                             "$75,000 to $99,999","$100,000 to $149,999","$150,000 and over",
