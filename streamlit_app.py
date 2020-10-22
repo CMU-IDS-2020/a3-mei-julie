@@ -5,7 +5,7 @@ from vega_datasets import data
 import requests
 import io
 
-@st.cache  # add caching so we load the data only once
+#@st.cache  # add caching so we load the data only once
 def load_data(url):
     return pd.read_csv(url)
 
@@ -39,7 +39,12 @@ def make_chart(source):
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
 
+st.title("Who Made 👴🏻,👴🏻,👴🏽,👴🏻 President?")
+
+st.write("This visualization explores demographics of voters for the past elections starting from 2000. How can you make a difference for your demographic for the upcoming 2020 election?")
+
 st.subheader("Who voted? A Breakdown of the Voting Population")
+
 
 ####AGE#####
 url="https://raw.githubusercontent.com/CMU-IDS-2020/a3-mei-julie/master/AgeData.csv"
