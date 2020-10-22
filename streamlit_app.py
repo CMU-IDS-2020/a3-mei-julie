@@ -34,7 +34,7 @@ def make_chart(source):
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
         y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
         color=alt.Color('column:N', title="Legend",
-                scale=alt.Scale(range=['#40A8A5', '#80C77F']))
+                scale=alt.Scale(range=['#F9EFAA', '#40A8A5']))
     ).properties(width=600)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
@@ -89,7 +89,7 @@ df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.condition(alt.datum.year==elec_year,alt.value('#40A8A5'),alt.value('light blue'))
+    color=alt.condition(alt.datum.year==elec_year,alt.value('#B1D6A9'),alt.value('light blue'))
 ).properties(width=600)
 st.write(votebars)
 
