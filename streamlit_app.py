@@ -146,7 +146,7 @@ elif dem_type=='Income':
                                                             "$25,000 to $34,999","$35,000 to $49,999","$50,000 to $74,999",
                                                             "$75,000 and over", "Income not reported"])),
         y=alt.Y(field='status',type='nominal',title='Status',scale=alt.Scale(domain=['not registered','registered','voted'])),
-        size='# of People:Q'
+        size=alt.Size('# of People:Q',title='(in thousands)')
         ).properties(
             width=500,
             height=350
@@ -158,7 +158,7 @@ elif dem_type=='Income':
                                                             "$75,000 to $99,999","$100,000 to $149,999","$150,000 and over",
                                                             "Income not reported"])),
         y=alt.Y(field='status',type='nominal',title='Status',scale=alt.Scale(domain=['voted','registered','not registered'])),
-        size=alt.Size('# of People:Q'),
+        size=alt.Size('# of People:Q',title='# of People (in thousands)'),
         tooltip=[alt.Tooltip('test:N',title="Income"),alt.Tooltip('# of People:O')]
         ).properties(
             width=500,
