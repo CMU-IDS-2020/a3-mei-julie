@@ -89,7 +89,7 @@ df_voteyear=load_data(url)
 votebars=alt.Chart(df_voteyear).mark_bar(size=30).encode(
     x=alt.X('year:O',axis=alt.Axis(title="Year")),
     y=alt.Y("totalvotes:Q",axis=alt.Axis(title="Number of Votes")),
-    color=alt.condition(alt.datum.year==elec_year,alt.value('#308685'),alt.value('light blue'))
+    color=alt.condition(alt.datum.year==elec_year,alt.value('#40A8A5'),alt.value('light blue'))
 ).properties(width=600)
 st.write(votebars)
 
@@ -108,12 +108,12 @@ source3 = c.loc[c["Race"] == "Hispanic"]
 source4 = c.loc[c["Race"] == "White"]
 
 
-asianchart=alt.Chart(source1).mark_area(opacity=0.5).encode(
+asianchart=alt.Chart(source1).mark_area(opacity=0.7).encode(
     x="Year:O",
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[Asian] Number of Votes'),
     color=alt.Color("Label:N",
             scale=alt.Scale(
-                range=['#80C77F','#69CAD2','#308685']))
+                range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
 blackchart=alt.Chart(source2).mark_area(opacity=0.5).encode(
@@ -121,7 +121,7 @@ blackchart=alt.Chart(source2).mark_area(opacity=0.5).encode(
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[Black] Number of Votes'),
     color=alt.Color("Label:N",
             scale=alt.Scale(
-                range=['#80C77F','#69CAD2','#308685']))
+                range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
 hispanicchart=alt.Chart(source3).mark_area(opacity=0.5).encode(
@@ -129,7 +129,7 @@ hispanicchart=alt.Chart(source3).mark_area(opacity=0.5).encode(
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[Hispanic] Number of Votes'),
     color=alt.Color("Label:N",
             scale=alt.Scale(
-                range=['#80C77F','#69CAD2','#308685']))
+                range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
 whitechart=alt.Chart(source4).mark_area(opacity=0.5).encode(
@@ -137,7 +137,7 @@ whitechart=alt.Chart(source4).mark_area(opacity=0.5).encode(
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[White] Number of Votes'),
     color=alt.Color("Label:N",
             scale=alt.Scale(
-                range=['#80C77F','#69CAD2','#308685']))
+                range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
 ####WRITE GRAPHS######
