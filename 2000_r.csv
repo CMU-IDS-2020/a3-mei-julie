@@ -1,4 +1,4 @@
-state,year,party,p_votes,id
+state,year,party,percent_votes,id
 Alabama,2000,republican,0.5648376,1
 Alaska,2000,republican,0.58620954,2
 Arizona,2000,republican,0.5102114,4
