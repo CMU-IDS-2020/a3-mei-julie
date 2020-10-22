@@ -5,7 +5,7 @@ from vega_datasets import data
 import requests
 import io
 
-#@st.cache  # add caching so we load the data only once
+@st.cache  # add caching so we load the data only once
 def load_data(url):
     return pd.read_csv(url)
 
