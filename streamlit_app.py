@@ -34,7 +34,7 @@ def make_chart(source):
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
         y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
         color=alt.Color('column:N', title="Legend",
-                scale=alt.Scale(range=['#40A8A5', '#F8EA61']))
+                scale=alt.Scale(range=['#40A8A5', '#80C77F']))
     ).properties(width=600)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
