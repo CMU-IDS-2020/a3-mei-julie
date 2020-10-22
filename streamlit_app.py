@@ -34,7 +34,7 @@ def make_chart(source):
         x=alt.X('Age_Group:N',axis=alt.Axis(title="Age Group")),
         y=alt.Y("value:Q",axis=alt.Axis(title="Number of Votes")),
         color=alt.Color('column:N', title="Legend",
-                scale=alt.Scale(range=['#308685', '#80C77F']))
+                scale=alt.Scale(range=['#40A8A5', '#F8EA61']))
     ).properties(width=600)
 
 elec_year=st.sidebar.slider("Toggle between election years:",min_value=2000,max_value=2016,step=4)
@@ -116,7 +116,7 @@ asianchart=alt.Chart(source1).mark_area(opacity=0.7).encode(
                 range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
-blackchart=alt.Chart(source2).mark_area(opacity=0.5).encode(
+blackchart=alt.Chart(source2).mark_area(opacity=0.7).encode(
     x="Year:O",
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[Black] Number of Votes'),
     color=alt.Color("Label:N",
@@ -124,7 +124,7 @@ blackchart=alt.Chart(source2).mark_area(opacity=0.5).encode(
                 range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
-hispanicchart=alt.Chart(source3).mark_area(opacity=0.5).encode(
+hispanicchart=alt.Chart(source3).mark_area(opacity=0.7).encode(
     x="Year:O",
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[Hispanic] Number of Votes'),
     color=alt.Color("Label:N",
@@ -132,7 +132,7 @@ hispanicchart=alt.Chart(source3).mark_area(opacity=0.5).encode(
                 range=['#F8EA61','#80C77F','#308685']))
 ).properties(height=300, width=500)
 
-whitechart=alt.Chart(source4).mark_area(opacity=0.5).encode(
+whitechart=alt.Chart(source4).mark_area(opacity=0.7).encode(
     x="Year:O",
     y=alt.Y("Number_of_Votes:Q", stack=None, title='[White] Number of Votes'),
     color=alt.Color("Label:N",
@@ -156,7 +156,7 @@ elif dem_type=='Income':
     ####BINNED PLOT####
     income=None
     if elec_year==2000:
-        income=alt.Chart(df_income).mark_circle(color='#F8EA61').encode(
+        income=alt.Chart(df_income).mark_circle(color='#80C77F').encode(
         x=alt.X(field='test',type="nominal",title='Income',scale=alt.Scale(domain=["Under $5,000","$5,000 to $9,999","$10,000 to $14,999","$15,000 to $24,999",
                                                             "$25,000 to $34,999","$35,000 to $49,999","$50,000 to $74,999",
                                                             "$75,000 and over", "Income not reported"])),
@@ -167,7 +167,7 @@ elif dem_type=='Income':
             height=350
         )
     else:
-        income=alt.Chart(df_income).mark_circle(color='#F8EA61').encode(
+        income=alt.Chart(df_income).mark_circle(color='#80C77F').encode(
         x=alt.X(field='test',type="nominal",title='Income',scale=alt.Scale(domain=["Under $10,000","$10,000 to $14,999","$15,000 to $19,999","$20,000 to $29,999",
                                                             "$30,000 to $39,999","$40,000 to $49,999","$50,000 to $74,999",
                                                             "$75,000 to $99,999","$100,000 to $149,999","$150,000 and over",
