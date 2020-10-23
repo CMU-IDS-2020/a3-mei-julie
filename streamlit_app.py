@@ -148,7 +148,7 @@ elif dem_type=='Income':
         y=alt.Y(field='status',type='nominal',title='Status',scale=alt.Scale(domain=['not registered','registered','voted'])),
         size=alt.Size('# of People:Q',title='(in thousands)')
         ).properties(
-            width=500,
+            width=400,
             height=350
         )
     else:
