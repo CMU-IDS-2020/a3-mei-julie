@@ -1,6 +1,6 @@
 # Connecting dots behind previous elections
 
-![A screenshot of your application. Could be a GIF.](Screen\ Shot\ 2020-10-22\ at\ 10.02.08\ AM.jpg)
+![A screenshot of your application. Could be a GIF.](screenshot.jpg)
 
 This project explores voter demographics through the lenses of age, income, and race, and how political parties within states, especially swing states, change over time. The interactive deep-dives into these two topics pushes the user to consider past social or economic phenomenons that have played into political decisions of which demographics decided to take the time to vote, and ultimately encourage them to vote for the 2020 election.
 
