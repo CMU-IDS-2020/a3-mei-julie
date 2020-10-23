@@ -1,4 +1,4 @@
-# Connecting dots behind previous elections
+# Connecting Dots Behind Previous Elections
 
 ![A screenshot of your application. Could be a GIF.](screenshot.jpg)
 
